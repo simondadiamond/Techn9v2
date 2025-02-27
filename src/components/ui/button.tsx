@@ -5,10 +5,19 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline" | "ghost"
   size?: "default" | "sm" | "lg"
+  calendlyUrl?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "default", size = "default", ...props }, ref) => {
+  ({ className, variant = "default", size = "default", calendlyUrl, onClick, ...props }, ref) => {
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      if (calendlyUrl && window.Calendly) {
+        e.preventDefault();
+        window.Calendly.initPopupWidget({ url: calendlyUrl });
+      }
+      onClick?.(e);
+    };
+
     return (
       <button
         className={cn(
@@ -23,6 +32,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           },
           className
         )}
+        onClick={handleClick}
         ref={ref}
         {...props}
       />
