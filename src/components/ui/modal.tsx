@@ -14,20 +14,37 @@ const Modal: React.FC<ModalProps> = ({
   children,
   className,
 }) => {
-  if (!isOpen) return null
+  // Handle ESC key press
+  React.useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [onClose]);
+
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80" onClick={onClose}>
-      <div className="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-gray-800 bg-[#1A1A1A] p-6 shadow-lg duration-200 sm:rounded-lg">
-        <div
-          className={cn("relative", className)}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {children}
-        </div>
+    <div 
+      className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className={cn(
+          "relative bg-white rounded-lg shadow-xl",
+          className
+        )}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export { Modal }

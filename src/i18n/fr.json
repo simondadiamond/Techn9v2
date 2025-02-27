@@ -11,10 +11,15 @@
   },
   "hero": {
     "welcome": "Bienvenue chez Techn9",
-    "title": "Solutions d'IA adaptées aux besoins de votre entreprise",
-    "subtitle": "Intégration de technologies d'IA de pointe dans votre flux de travail, favorisant l'efficacité, l'innovation et la croissance.",
-    "getStarted": "Commencer",
-    "bookCall": "Réserver un appel"
+    "mainTitle": {
+      "prefix": "Évoluez plus rapidement avec",
+      "highlight": "l'Automatisation Intelligente"
+    },
+    "subtitle": "Découvrez des stratégies d'automatisation sur mesure conçues pour optimiser les opérations et stimuler une croissance exponentielle.",
+    "cta": {
+      "primary": "En savoir plus",
+      "secondary": "Réserver un appel"
+    }
   },
   "services": {
     "title": "Transformez votre entreprise avec l'IA",

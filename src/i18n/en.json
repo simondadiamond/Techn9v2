@@ -11,10 +11,15 @@
   },
   "hero": {
     "welcome": "Welcome to Techn9",
-    "title": "AI solutions tailored to your business needs",
-    "subtitle": "Leveraging cutting-edge AI technologies into your workflow, driving efficiency, innovation, and growth.",
-    "getStarted": "Get Started",
-    "bookCall": "Book a call"
+    "mainTitle": {
+      "prefix": "Scale Faster with",
+      "highlight": "Smart Automation"
+    },
+    "subtitle": "Discover tailored automation strategies designed to optimize operations and drive exponential growth.",
+    "cta": {
+      "primary": "Learn More",
+      "secondary": "Book a Call"
+    }
   },
   "services": {
     "title": "Transform your business with AI",

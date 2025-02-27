@@ -8,8 +8,13 @@ const Hero = () => {
 
   const url =
     language === 'fr'
-      ? 'https://calendly.com/techn9/30-minute-meeting-clone'
-      : 'https://calendly.com/techn9/30min';
+      ? 'https://calendly.com/techn9/consultationfr'
+      : 'https://calendly.com/techn9/consultationen';
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    servicesSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="relative min-h-screen bg-[#111111] hero-pattern flex flex-col items-center justify-center text-center px-4 py-20">
@@ -21,10 +26,10 @@ const Hero = () => {
         <div className="space-y-12 md:space-y-16">
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
-            Scale Faster with{' '}
+            {t('hero.mainTitle.prefix')}{' '}
             <span className="relative">
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3]">
-                Smart Automation
+                {t('hero.mainTitle.highlight')}
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#40E0D0]/20 to-[#2bb8e3]/20 blur-xl" />
             </span>
@@ -32,22 +37,25 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="max-w-2xl mx-auto text-xl sm:text-2xl text-gray-400 leading-relaxed">
-            Discover tailored automation strategies designed to optimize operations and drive exponential growth.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            {/* Primary CTA */}
-            <button className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-black rounded-full bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] hover:from-[#2bb8e3] hover:to-[#40E0D0] transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#40E0D0]/25">
-              {t('hero.getStarted')}
-            </button>
-
-            {/* Secondary CTA */}
+            {/* Book a Call Button (Primary) */}
             <button
               onClick={() => setShowCalendly(true)}
+              className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-black rounded-full bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] hover:from-[#2bb8e3] hover:to-[#40E0D0] transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#40E0D0]/25"
+            >
+              {t('hero.cta.secondary')}
+            </button>
+
+            {/* Learn More Button (Secondary) */}
+            <button
+              onClick={scrollToServices}
               className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-white rounded-full border-2 border-[#40E0D0]/20 hover:border-[#40E0D0]/30 bg-[#40E0D0]/5 hover:bg-[#40E0D0]/10 backdrop-blur-sm transform transition-all duration-200 hover:scale-105"
             >
-              {t('hero.bookCall')}
+              {t('hero.cta.primary')}
             </button>
           </div>
         </div>

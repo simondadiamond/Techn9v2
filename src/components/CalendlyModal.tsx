@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Modal } from './ui/modal';
 
 interface CalendlyModalProps {
   url: string;
@@ -24,20 +25,31 @@ const CalendlyModal: React.FC<CalendlyModalProps> = ({ url, onClose }) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] relative">
+    <Modal isOpen={true} onClose={onClose}>
+      <div className="relative w-full max-w-4xl h-[80vh] bg-white rounded-lg">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="absolute top-4 right-4 z-50 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+          aria-label="Close modal"
         >
-          Close
+          <svg
+            className="w-5 h-5 text-gray-600"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
         </button>
         <div 
           className="calendly-inline-widget w-full h-full"
           data-url={url}
         />
       </div>
-    </div>
+    </Modal>
   );
 };
 

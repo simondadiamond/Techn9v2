@@ -56,7 +56,15 @@ const Navbar = () => {
         `}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
-          <div className="text-white text-xl font-semibold">Techn9</div>
+          <div className="text-white text-xl font-semibold tracking-wider">
+            <span>TECHN</span>
+            <span className="relative">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] font-bold text-[1em]">
+                9
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#40E0D0]/30 to-[#2bb8e3]/30 blur-lg" />
+            </span>
+          </div>
           <div className="md:hidden flex items-center">
             <LanguageSwitcher />
             <button 
