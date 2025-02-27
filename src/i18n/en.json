@@ -1,0 +1,177 @@
+{
+  "nav": {
+    "services": "Services",
+    "process": "Process",
+    "work": "Work",
+    "pricing": "Pricing",
+    "about": "About",
+    "faqs": "FAQs",
+    "blog": "Blog",
+    "contactUs": "Contact us"
+  },
+  "hero": {
+    "welcome": "Welcome to Techn9",
+    "title": "AI solutions tailored to your business needs",
+    "subtitle": "Leveraging cutting-edge AI technologies into your workflow, driving efficiency, innovation, and growth.",
+    "getStarted": "Get Started",
+    "bookCall": "Book a call"
+  },
+  "services": {
+    "title": "Transform your business with AI",
+    "workflow": {
+      "title": "Workflow Automation",
+      "description": "Streamline your business processes and boost productivity with our AI-powered workflow automation solutions."
+    },
+    "gpt": {
+      "title": "GPT Development",
+      "description": "Unlock the potential of advanced natural language processing with our GPT development services."
+    },
+    "consulting": {
+      "title": "Business Consulting",
+      "description": "Gain strategic insights and actionable recommendations with our AI-powered business consulting services."
+    },
+    "strategy": {
+      "title": "Strategy Development",
+      "description": "Chart a course for success in the rapidly evolving digital landscape with our AI strategy development services."
+    }
+  },
+  "process": {
+    "title": "Simple & efficient process",
+    "steps": {
+      "subscribe": {
+        "title": "Subscribe",
+        "description": "Choose a plan that fits your business needs, with options for scalability and customization."
+      },
+      "request": {
+        "title": "Request",
+        "description": "Our experts review your request and schedule a consultation to discuss your specific needs."
+      },
+      "receive": {
+        "title": "Receive",
+        "description": "We deliver a solution tailored to your requirements with a clear and detailed timeline."
+      },
+      "optimize": {
+        "title": "Optimize",
+        "description": "We improve and iterate based on performance monitoring and analysis."
+      }
+    }
+  },
+  "benefits": {
+    "title": "What we offer",
+    "efficiency": {
+      "title": "Efficiency Improvement",
+      "description": "Streamline your business operations and workflows with AI automation solutions."
+    },
+    "cost": {
+      "title": "Cost Reduction",
+      "description": "Reduce operational costs by automating repetitive tasks and optimizing resource allocation."
+    },
+    "customization": {
+      "title": "Customization",
+      "description": "Tailor AI automation solutions to your specific business needs and objectives."
+    },
+    "scalability": {
+      "title": "Scalability",
+      "description": "Scale your operations seamlessly with AI automation that can adapt to your growing business needs."
+    },
+    "accuracy": {
+      "title": "Improved Accuracy",
+      "description": "Increase accuracy and reduce errors in data processing and decision-making with AI-driven solutions."
+    },
+    "insights": {
+      "title": "Data Insights",
+      "description": "Unlock valuable insights from your data, enabling data-driven decision-making and strategic planning."
+    }
+  },
+  "work": {
+    "title": "Some of our work",
+    "projects": {
+      "ecommerce": {
+        "year": "2023",
+        "category": "E-commerce",
+        "title": "Streamlining customer support",
+        "overview": "We examine how a company optimized its customer support processes using AI automation. By implementing an AI-powered chatbot, the company streamlined its customer interactions, reducing response times and enhancing user satisfaction."
+      },
+      "finance": {
+        "year": "2024",
+        "category": "Finance",
+        "title": "Automating Document Processing",
+        "overview": "This case study explores how a financial institution automated its document processing tasks using AI technology. By deploying an AI-driven system capable of extracting and analyzing data from various documents, the company was able to streamline its operations, reduce errors, and expedite decision-making processes."
+      },
+      "retail": {
+        "year": "2024",
+        "category": "Retail",
+        "title": "Enhancing Marketing Personalization",
+        "overview": "We investigate how a retail company leveraged AI automation to enhance its marketing personalization efforts. By utilizing AI algorithms to analyze customer data and deliver personalized product recommendations and promotions, the company achieved higher engagement and conversion rates."
+      }
+    }
+  },
+  "about": {
+    "title": "Who we are",
+    "story": {
+      "title": "Our story",
+      "description": "Welcome to Techn9, we are passionate about harnessing the power of artificial intelligence to revolutionize the way businesses operate. Founded on the belief that technology should empower organizations to achieve their goals more efficiently and effectively, we specialize in delivering cutting-edge AI automation solutions tailored to the unique needs of our clients."
+    }
+  },
+  "contact": {
+    "title": "Reach out to us",
+    "getInTouch": "Get in touch",
+    "email": "Email:",
+    "emailAddress": "info@techn9.com",
+    "phone": "Phone:",
+    "phoneNumber": "(123) 456 7890",
+    "address": "Address:",
+    "addressDetails": "Street Address\nYour City, State, Zip Code\nCountry",
+    "followUs": "Follow us:",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Jane Smith",
+      "emailPlaceholder": "email@gmail.com",
+      "messagePlaceholder": "Hello!",
+      "subscribe": "Subscribe to Newsletter",
+      "send": "Send message"
+    }
+  },
+  "callToAction": {
+    "title": "Get started today with a 30min intro call",
+    "subtitle": "A no-strings-attached meet and greet + consultation with Nick 👋",
+    "bookNow": "Book your call now.",
+    "buttonText": "Book intro call →",
+    "noCreditCard": "No credit card required."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "questions": [
+      {
+        "question": "What industries can benefit from AI automation solutions?",
+        "answer": "AI automation solutions can benefit a wide range of industries including healthcare, finance, retail, manufacturing, logistics, and more. Any industry that deals with data processing, customer service, or repetitive tasks can see significant improvements through AI automation."
+      },
+      {
+        "question": "How does AI automation differ from traditional automation methods?",
+        "answer": "AI automation is more sophisticated than traditional automation as it can learn and adapt to new situations, handle complex decision-making, and process unstructured data. Traditional automation follows fixed rules, while AI can evolve and improve over time."
+      },
+      {
+        "question": "What are some common use cases for AI automation?",
+        "answer": "Common use cases include customer service chatbots, document processing, predictive maintenance, fraud detection, inventory management, and personalized marketing campaigns."
+      },
+      {
+        "question": "How can AI automation improve business processes?",
+        "answer": "AI automation can reduce errors, increase speed and efficiency, lower operational costs, improve customer satisfaction, and free up human resources for more strategic tasks."
+      },
+      {
+        "question": "How secure are AI automation solutions?",
+        "answer": "Our AI automation solutions implement industry-standard security protocols, including data encryption, secure APIs, and regular security audits. We comply with relevant data protection regulations and maintain strict privacy controls."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Leveraging cutting-edge AI technologies into your workflow, driving efficiency, innovation, and growth.",
+    "getStarted": "Get started",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "getInTouch": "Get in touch",
+    "copyright": "© Copyright 2025"
+  }
+}

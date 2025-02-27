@@ -1,0 +1,177 @@
+{
+  "nav": {
+    "services": "Services",
+    "process": "Processus",
+    "work": "Travaux",
+    "pricing": "Tarification",
+    "about": "À propos",
+    "faqs": "FAQs",
+    "blog": "Blog",
+    "contactUs": "Contactez-nous"
+  },
+  "hero": {
+    "welcome": "Bienvenue chez Techn9",
+    "title": "Solutions d'IA adaptées aux besoins de votre entreprise",
+    "subtitle": "Intégration de technologies d'IA de pointe dans votre flux de travail, favorisant l'efficacité, l'innovation et la croissance.",
+    "getStarted": "Commencer",
+    "bookCall": "Réserver un appel"
+  },
+  "services": {
+    "title": "Transformez votre entreprise avec l'IA",
+    "workflow": {
+      "title": "Automatisation des flux de travail",
+      "description": "Rationalisez vos processus d'entreprise et augmentez la productivité grâce à nos solutions d'automatisation des flux de travail alimentées par l'IA."
+    },
+    "gpt": {
+      "title": "Développement GPT",
+      "description": "Libérez le potentiel du traitement avancé du langage naturel avec nos services de développement GPT."
+    },
+    "consulting": {
+      "title": "Conseil aux entreprises",
+      "description": "Obtenez des perspectives stratégiques et des recommandations exploitables grâce à nos services de conseil aux entreprises alimentés par l'IA."
+    },
+    "strategy": {
+      "title": "Développement de stratégie",
+      "description": "Tracez une voie vers le succès dans le paysage numérique en évolution rapide avec nos services de développement de stratégie d'IA."
+    }
+  },
+  "process": {
+    "title": "Processus simple et efficace",
+    "steps": {
+      "subscribe": {
+        "title": "S'abonner",
+        "description": "Choisissez un plan qui correspond aux besoins de votre entreprise, avec des options d'évolutivité et de personnalisation."
+      },
+      "request": {
+        "title": "Demander",
+        "description": "Nos experts examinent votre demande et planifient une consultation pour discuter de vos besoins spécifiques."
+      },
+      "receive": {
+        "title": "Recevoir",
+        "description": "Nous livrons une solution adaptée à vos exigences avec un calendrier clair et détaillé."
+      },
+      "optimize": {
+        "title": "Optimiser",
+        "description": "Nous améliorons et itérons en fonction de la surveillance et de l'analyse des performances."
+      }
+    }
+  },
+  "benefits": {
+    "title": "Ce que nous offrons",
+    "efficiency": {
+      "title": "Amélioration de l'efficacité",
+      "description": "Rationalisez vos opérations commerciales et vos flux de travail avec des solutions d'automatisation d'IA."
+    },
+    "cost": {
+      "title": "Réduction des coûts",
+      "description": "Réduisez les coûts opérationnels en automatisant les tâches répétitives et en optimisant l'allocation des ressources."
+    },
+    "customization": {
+      "title": "Personnalisation",
+      "description": "Adaptez les solutions d'automatisation d'IA à vos besoins et objectifs commerciaux spécifiques."
+    },
+    "scalability": {
+      "title": "Évolutivité",
+      "description": "Faites évoluer vos opérations de manière transparente avec l'automatisation d'IA qui peut s'adapter à vos besoins commerciaux croissants."
+    },
+    "accuracy": {
+      "title": "Précision améliorée",
+      "description": "Augmentez la précision et réduisez les erreurs dans le traitement des données et la prise de décision avec des solutions basées sur l'IA."
+    },
+    "insights": {
+      "title": "Insights de données",
+      "description": "Débloquez des informations précieuses à partir de vos données, permettant une prise de décision basée sur les données et une planification stratégique."
+    }
+  },
+  "work": {
+    "title": "Quelques-uns de nos travaux",
+    "projects": {
+      "ecommerce": {
+        "year": "2023",
+        "category": "E-commerce",
+        "title": "Rationalisation du support client",
+        "overview": "Nous examinons comment une entreprise a optimisé ses processus de support client en utilisant l'automatisation de l'IA. En implémentant un chatbot alimenté par l'IA, l'entreprise a rationalisé ses interactions avec les clients, réduisant les temps de réponse et améliorant la satisfaction des utilisateurs."
+      },
+      "finance": {
+        "year": "2024",
+        "category": "Finance",
+        "title": "Automatisation du traitement des documents",
+        "overview": "Cette étude de cas explore comment une institution financière a automatisé ses tâches de traitement de documents en utilisant la technologie d'IA. En déployant un système piloté par l'IA capable d'extraire et d'analyser des données à partir de divers documents, l'entreprise a pu rationaliser ses opérations, réduire les erreurs et accélérer les processus de prise de décision."
+      },
+      "retail": {
+        "year": "2024",
+        "category": "Vente au détail",
+        "title": "Amélioration de la personnalisation marketing",
+        "overview": "Nous étudions comment une entreprise de vente au détail a utilisé l'automatisation de l'IA pour améliorer ses efforts de personnalisation marketing. En utilisant des algorithmes d'IA pour analyser les données clients et fournir des recommandations de produits et des promotions personnalisées, l'entreprise a atteint des taux d'engagement et de conversion plus élevés."
+      }
+    }
+  },
+  "about": {
+    "title": "Qui nous sommes",
+    "story": {
+      "title": "Notre histoire",
+      "description": "Bienvenue chez Techn9, nous sommes passionnés par l'exploitation de la puissance de l'intelligence artificielle pour révolutionner la façon dont les entreprises fonctionnent. Fondés sur la conviction que la technologie devrait permettre aux organisations d'atteindre leurs objectifs plus efficacement, nous nous spécialisons dans la fourniture de solutions d'automatisation d'IA de pointe adaptées aux besoins uniques de nos clients."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "getInTouch": "Entrer en contact",
+    "email": "Email:",
+    "emailAddress": "info@techn9.com",
+    "phone": "Téléphone:",
+    "phoneNumber": "(123) 456 7890",
+    "address": "Adresse:",
+    "addressDetails": "Adresse de la rue\nVotre ville, État, Code postal\nPays",
+    "followUs": "Suivez-nous:",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Jane Smith",
+      "emailPlaceholder": "email@gmail.com",
+      "messagePlaceholder": "Bonjour!",
+      "subscribe": "S'abonner à la newsletter",
+      "send": "Envoyer le message"
+    }
+  },
+  "callToAction": {
+    "title": "Commencez aujourd'hui avec un appel d'introduction de 30 min",
+    "subtitle": "Une rencontre sans engagement + consultation avec Nick 👋",
+    "bookNow": "Réservez votre appel maintenant.",
+    "buttonText": "Réserver un appel d'intro →",
+    "noCreditCard": "Aucune carte de crédit requise."
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "questions": [
+      {
+        "question": "Quelles industries peuvent bénéficier des solutions d'automatisation d'IA?",
+        "answer": "Les solutions d'automatisation d'IA peuvent bénéficier à un large éventail d'industries, notamment la santé, la finance, la vente au détail, la fabrication, la logistique, et plus encore. Toute industrie qui traite du traitement des données, du service client ou des tâches répétitives peut voir des améliorations significatives grâce à l'automatisation de l'IA."
+      },
+      {
+        "question": "En quoi l'automatisation de l'IA diffère-t-elle des méthodes d'automatisation traditionnelles?",
+        "answer": "L'automatisation de l'IA est plus sophistiquée que l'automatisation traditionnelle car elle peut apprendre et s'adapter à de nouvelles situations, gérer des prises de décision complexes et traiter des données non structurées. L'automatisation traditionnelle suit des règles fixes, tandis que l'IA peut évoluer et s'améliorer avec le temps."
+      },
+      {
+        "question": "Quels sont les cas d'utilisation courants de l'automatisation de l'IA?",
+        "answer": "Les cas d'utilisation courants incluent les chatbots de service client, le traitement de documents, la maintenance prédictive, la détection de fraude, la gestion des stocks et les campagnes marketing personnalisées."
+      },
+      {
+        "question": "Comment l'automatisation de l'IA peut-elle améliorer les processus d'entreprise?",
+        "answer": "L'automatisation de l'IA peut réduire les erreurs, augmenter la vitesse et l'efficacité, réduire les coûts opérationnels, améliorer la satisfaction client et libérer des ressources humaines pour des tâches plus stratégiques."
+      },
+      {
+        "question": "Dans quelle mesure les solutions d'automatisation d'IA sont-elles sécurisées?",
+        "answer": "Nos solutions d'automatisation d'IA mettent en œuvre des protocoles de sécurité standard de l'industrie, y compris le chiffrement des données, des API sécurisées et des audits de sécurité réguliers. Nous respectons les réglementations pertinentes en matière de protection des données et maintenons des contrôles de confidentialité stricts."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Intégration de technologies d'IA de pointe dans votre flux de travail, favorisant l'efficacité, l'innovation et la croissance.",
+    "getStarted": "Commencer",
+    "navigation": "Navigation",
+    "legal": "Légal",
+    "getInTouch": "Entrer en contact",
+    "copyright": "© Copyright 2025"
+  }
+}
