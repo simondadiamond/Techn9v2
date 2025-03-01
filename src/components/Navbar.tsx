@@ -62,7 +62,6 @@ const Navbar = () => {
               alt="TECHN9" 
               className="h-6 md:h-8 w-auto"
               style={{
-                filter: 'invert(1)',
                 mixBlendMode: 'screen'
               }}
             />
