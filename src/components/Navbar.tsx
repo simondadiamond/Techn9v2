@@ -22,7 +22,6 @@ const Navbar = () => {
   const handleNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         element?.scrollIntoView({ behavior: 'smooth' });
@@ -57,13 +56,15 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center w-full md:w-auto">
           <div className="text-white text-xl font-semibold tracking-wider">
-            <span>TECHN</span>
-            <span className="relative">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] font-bold text-[1em]">
-                9
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#40E0D0]/30 to-[#2bb8e3]/30 blur-lg" />
-            </span>
+            <img 
+              src="/media/techn9-logo.png" 
+              alt="TECHN9" 
+              className="h-8 md:h-10 w-auto"
+              style={{
+                filter: 'brightness(0) invert(1)',
+                mixBlendMode: 'screen'
+              }}
+            />
           </div>
           <div className="md:hidden flex items-center">
             <LanguageSwitcher />

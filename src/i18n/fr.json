@@ -41,24 +41,22 @@
     }
   },
   "process": {
-    "title": "Processus simple et efficace",
-    "steps": {
-      "subscribe": {
-        "title": "S'abonner",
-        "description": "Choisissez un plan qui correspond aux besoins de votre entreprise, avec des options d'évolutivité et de personnalisation."
-      },
-      "request": {
-        "title": "Demander",
-        "description": "Nos experts examinent votre demande et planifient une consultation pour discuter de vos besoins spécifiques."
-      },
-      "receive": {
-        "title": "Recevoir",
-        "description": "Nous livrons une solution adaptée à vos exigences avec un calendrier clair et détaillé."
-      },
-      "optimize": {
-        "title": "Optimiser",
-        "description": "Nous améliorons et itérons en fonction de la surveillance et de l'analyse des performances."
-      }
+    "title": "Un processus simple et efficace",
+    "step1": {
+      "title": "1. Commençons par une conversation",
+      "description": "Nous débutons par une discussion amicale pour comprendre vos besoins, objectifs et vision. C'est l'occasion d'explorer des idées et de voir comment l'automatisation peut vous aider à atteindre vos objectifs."
+    },
+    "step2": {
+      "title": "2. Nous vous proposons un plan personnalisé",
+      "description": "À partir de notre échange, nous créons une proposition claire et sur mesure. Nous détaillons les solutions spécifiques, le calendrier et les résultats attendus, afin que vous sachiez exactement à quoi vous attendre."
+    },
+    "step3": {
+      "title": "3. Nous donnons vie à vos idées",
+      "description": "Avec un plan bien défini, nous passons à l'action pour livrer votre solution de manière fluide et efficace. Nous assurons une communication transparente tout au long du processus afin que vous soyez toujours informé des avancées."
+    },
+    "step4": {
+      "title": "4. Nous ajustons et améliorons",
+      "description": "Une fois la solution livrée, nous la surveillons et l'affinons pour garantir des performances optimales. Nous effectuons des améliorations basées sur les données afin de maximiser l'efficacité et de nous adapter à vos besoins évolutifs."
     }
   },
   "benefits": {

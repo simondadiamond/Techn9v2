@@ -1,34 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useCalendly } from '../hooks/useCalendly';
 
 interface CalendlyModalProps {
   url: string;
-  onClose: () => void;
+  onClose?: () => void;
+  onLoad?: () => void;
+  onError?: (error: Error) => void;
 }
 
-declare global {
-  interface Window {
-    Calendly: any;
-  }
-}
+const CalendlyModal: React.FC<CalendlyModalProps> = ({
+  url,
+  onClose,
+  onLoad,
+  onError,
+}) => {
+  const { closeCalendly } = useCalendly({
+    url,
+    onLoad,
+    onError,
+  });
 
-const CalendlyModal: React.FC<CalendlyModalProps> = ({ url, onClose }) => {
-  useEffect(() => {
-    // Initialize Calendly popup when component mounts
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: url
-      });
-    }
-
-    // Cleanup function to close popup when component unmounts
+  React.useEffect(() => {
     return () => {
-      if (window.Calendly && window.Calendly.closePopupWidget) {
-        window.Calendly.closePopupWidget();
-      }
+      closeCalendly();
     };
-  }, [url]);
+  }, [closeCalendly]);
 
-  // No need for Modal component since Calendly handles its own popup
   return null;
 };
 

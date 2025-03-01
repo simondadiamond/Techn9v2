@@ -1,22 +1,43 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { useCalendly } from "../../hooks/useCalendly"
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline" | "ghost"
   size?: "default" | "sm" | "lg"
   calendlyUrl?: string
+  onCalendlyLoad?: () => void
+  onCalendlyError?: (error: Error) => void
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "default", size = "default", calendlyUrl, onClick, ...props }, ref) => {
+  ({ 
+    className, 
+    variant = "default", 
+    size = "default", 
+    calendlyUrl,
+    onCalendlyLoad,
+    onCalendlyError,
+    onClick,
+    disabled,
+    ...props 
+  }, ref) => {
+    const { openCalendly, isScriptLoaded, isWidgetOpen } = calendlyUrl ? useCalendly({
+      url: calendlyUrl,
+      onLoad: onCalendlyLoad,
+      onError: onCalendlyError,
+    }) : { openCalendly: null, isScriptLoaded: true, isWidgetOpen: false };
+
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (calendlyUrl && window.Calendly) {
+      if (calendlyUrl && openCalendly && isScriptLoaded && !isWidgetOpen) {
         e.preventDefault();
-        window.Calendly.initPopupWidget({ url: calendlyUrl });
+        openCalendly();
       }
       onClick?.(e);
     };
+
+    const isButtonDisabled = disabled || (calendlyUrl && !isScriptLoaded);
 
     return (
       <button
@@ -33,6 +54,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         onClick={handleClick}
+        disabled={isButtonDisabled}
         ref={ref}
         {...props}
       />

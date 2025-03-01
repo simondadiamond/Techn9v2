@@ -42,23 +42,21 @@
   },
   "process": {
     "title": "Simple & efficient process",
-    "steps": {
-      "subscribe": {
-        "title": "Subscribe",
-        "description": "Choose a plan that fits your business needs, with options for scalability and customization."
-      },
-      "request": {
-        "title": "Request",
-        "description": "Our experts review your request and schedule a consultation to discuss your specific needs."
-      },
-      "receive": {
-        "title": "Receive",
-        "description": "We deliver a solution tailored to your requirements with a clear and detailed timeline."
-      },
-      "optimize": {
-        "title": "Optimize",
-        "description": "We improve and iterate based on performance monitoring and analysis."
-      }
+    "step1": {
+      "title": "1. Start with a Conversation",
+      "description": "We begin with a friendly chat to understand your needs, goals, and vision. This is where we explore ideas and see how we can help you achieve your objectives through automation."
+    },
+    "step2": {
+      "title": "2. We Provide a Personalized Plan",
+      "description": "Based on our discussion, we create a clear, customized proposal tailored just for you. We outline the specific solutions, timeline, and expected outcomes so you know exactly what to expect."
+    },
+    "step3": {
+      "title": "3. We Bring Your Ideas to Life",
+      "description": "With the plan in place, we get to work, delivering your solution smoothly and efficiently. We maintain clear communication throughout the process, ensuring you're always informed of our progress."
+    },
+    "step4": {
+      "title": "4. We Fine-Tune & Improve",
+      "description": "Once delivered, we monitor and refine the solution to ensure optimal performance. We make data-driven improvements to maximize efficiency and adapt to your evolving needs."
     }
   },
   "benefits": {
