@@ -25,27 +25,27 @@ const STEP_IMAGES = {
   }
 };
 
-const ProcessStep = ({ number, icon: Icon, title, isActive, onClick }) => (
+const ProcessStep = ({ number, icon: Icon, title, isActive, onClick, showConnector = true }) => (
   <div 
-    className={`flex items-start space-x-4 cursor-pointer transition-all duration-300 py-8 ${
-      isActive ? 'scale-105' : 'opacity-70 hover:opacity-90'
+    className={`flex items-start space-x-4 cursor-pointer transition-all duration-300 py-4 md:py-8 ${
+      isActive ? 'scale-[1.02] md:scale-105' : 'opacity-70 hover:opacity-90'
     }`}
     onClick={onClick}
   >
     <div className="relative">
       <div className={`
-        w-12 h-12 rounded-full flex items-center justify-center
+        w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center
         ${isActive ? 'bg-[#40E0D0]' : 'bg-gray-800'}
         transition-colors duration-300
       `}>
-        <Icon className={`h-6 w-6 ${isActive ? 'text-black' : 'text-[#40E0D0]'}`} />
+        <Icon className={`h-5 w-5 md:h-6 md:w-6 ${isActive ? 'text-black' : 'text-[#40E0D0]'}`} />
       </div>
-      {number < 4 && (
-        <div className="absolute top-[4.5rem] left-1/2 w-px h-24 bg-gray-800 -translate-x-1/2" />
+      {showConnector && number < 4 && (
+        <div className="absolute top-[3.5rem] md:top-[4.5rem] left-1/2 w-px h-16 md:h-24 bg-gray-800 -translate-x-1/2" />
       )}
     </div>
     <div className="flex-1">
-      <h3 className={`text-xl font-semibold ${
+      <h3 className={`text-lg md:text-xl font-semibold ${
         isActive ? 'text-[#40E0D0]' : 'text-white'
       }`}>{title}</h3>
     </div>
@@ -59,13 +59,13 @@ const ImageDisplay = ({ stepNumber, description }) => {
 
   return (
     <div className="bg-[#1A1A1A] rounded-2xl border border-gray-800 overflow-hidden">
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-4 md:space-y-6">
         <div className="relative">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-xl">
               <div className="relative">
-                <div className="w-12 h-12 border-4 border-[#40E0D0] border-t-transparent rounded-full animate-spin"></div>
-                <div className="absolute inset-0 w-12 h-12 border-4 border-[#40E0D0]/30 rounded-full"></div>
+                <div className="w-10 h-10 md:w-12 md:h-12 border-4 border-[#40E0D0] border-t-transparent rounded-full animate-spin"></div>
+                <div className="absolute inset-0 w-10 h-10 md:w-12 md:h-12 border-4 border-[#40E0D0]/30 rounded-full"></div>
               </div>
             </div>
           )}
@@ -137,12 +137,38 @@ const Process = () => {
   ];
 
   return (
-    <section className="bg-[#0A0A0A] py-20 px-4" id="process">
+    <section className="bg-[#0A0A0A] py-12 md:py-20 px-4" id="process">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-white mb-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 md:mb-16 text-center">
           {t('process.title')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+
+        {/* Mobile Layout */}
+        <div className="md:hidden space-y-8">
+          <div className="space-y-2">
+            {steps.map((step, index) => (
+              <div key={step.number} className="space-y-4">
+                <ProcessStep
+                  {...step}
+                  isActive={activeStep === step.number}
+                  onClick={() => setActiveStep(step.number)}
+                  showConnector={false}
+                />
+                {activeStep === step.number && (
+                  <div className="pl-14 transition-all duration-300">
+                    <ImageDisplay 
+                      stepNumber={activeStep}
+                      description={step.description}
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4 space-y-4">
             {steps.map((step) => (
               <ProcessStep
