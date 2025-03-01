@@ -60,9 +60,9 @@ const Navbar = () => {
             <img 
               src= {logo} 
               alt="TECHN9" 
-              className="h-8 md:h-10 w-auto"
+              className="h-6 md:h-8 w-auto"
               style={{
-                filter: 'brightness(0) invert(1)',
+                filter: 'invert(1)',
                 mixBlendMode: 'screen'
               }}
             />
