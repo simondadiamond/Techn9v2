@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center w-full md:w-auto">
           <div className="text-white text-xl font-semibold tracking-wider">
             <img 
-              src="/media/techn9-logo.png" 
+              src="../media/techn9-logo.png" 
               alt="TECHN9" 
               className="h-8 md:h-10 w-auto"
               style={{
