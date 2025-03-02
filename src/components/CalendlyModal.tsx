@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useCalendly } from '../hooks/useCalendly';
 
 interface CalendlyModalProps {
@@ -18,18 +18,39 @@ const CalendlyModal: React.FC<CalendlyModalProps> = ({
     url,
     onLoad,
     onError,
+    onClose,
   });
+
+  const handleClose = useCallback(() => {
+    closeCalendly();
+    onClose?.();
+  }, [closeCalendly, onClose]);
 
   useEffect(() => {
     if (isScriptLoaded) {
       openCalendly();
     }
+
     return () => {
       closeCalendly();
     };
   }, [isScriptLoaded, openCalendly, closeCalendly]);
 
+  // Handle ESC key
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [handleClose]);
+
   return null;
 };
 
-export default CalendlyModal;
+export default React.memo(CalendlyModal);

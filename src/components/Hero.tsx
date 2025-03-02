@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useI18n } from '../i18n';
-import CalendlyModal from './CalendlyModal';
+import { useCalendly } from '../hooks/useCalendly';
 
 const Hero = () => {
   const { t, language } = useI18n();
-  const [showCalendly, setShowCalendly] = useState(false);
+  const isCalendlyLoaded = useCalendly();
 
-  const url =
-    language === 'fr'
-      ? 'https://calendly.com/techn9/consultationfr'
-      : 'https://calendly.com/techn9/consultationen';
+  const url = language === 'fr'
+    ? 'https://calendly.com/techn9/consultationfr'
+    : 'https://calendly.com/techn9/consultationen';
+
+  const handleBookCall = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url });
+    }
+  };
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services');
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleBookCall = () => {
-    setShowCalendly(true);
   };
 
   return (
@@ -49,6 +51,7 @@ const Hero = () => {
             {/* Book a Call Button (Primary) */}
             <button
               onClick={handleBookCall}
+              disabled={!isCalendlyLoaded}
               className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-black rounded-full bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] hover:from-[#2bb8e3] hover:to-[#40E0D0] transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#40E0D0]/25"
             >
               {t('hero.cta.secondary')}
@@ -64,18 +67,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Calendly Modal */}
-      {showCalendly && (
-        <CalendlyModal 
-          url={url} 
-          onClose={() => setShowCalendly(false)}
-          onError={(error) => {
-            console.error('Calendly Error:', error);
-            setShowCalendly(false);
-          }}
-        />
-      )}
     </div>
   );
 };

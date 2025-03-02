@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 
 declare global {
   interface Window {
@@ -6,77 +6,33 @@ declare global {
   }
 }
 
-interface UseCalendlyOptions {
-  url: string;
-  onLoad?: () => void;
-  onError?: (error: Error) => void;
-}
-
-export const useCalendly = ({ url, onLoad, onError }: UseCalendlyOptions) => {
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-  const [isWidgetOpen, setIsWidgetOpen] = useState(false);
+export const useCalendly = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (window.Calendly) {
-      setIsScriptLoaded(true);
-      onLoad?.();
+      setIsLoaded(true);
       return;
     }
 
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    script.onload = () => {
-      setIsScriptLoaded(true);
-      onLoad?.();
-    };
-    script.onerror = () => {
-      onError?.(new Error('Failed to load Calendly widget'));
-    };
-
-    document.body.appendChild(script);
-
+    // Add Calendly CSS
     const link = document.createElement('link');
     link.href = 'https://assets.calendly.com/assets/external/widget.css';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
+    // Add Calendly JS
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => setIsLoaded(true);
+    document.body.appendChild(script);
+
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-      if (link.parentNode) {
-        link.parentNode.removeChild(link);
-      }
+      link.remove();
+      script.remove();
     };
-  }, [onLoad, onError]);
+  }, []);
 
-  const openCalendly = useCallback(() => {
-    if (!isScriptLoaded || !window.Calendly) {
-      console.warn('Calendly script not loaded');
-      return;
-    }
-
-    window.Calendly.initPopupWidget({
-      url,
-      onClose: () => {
-        setIsWidgetOpen(false);
-      },
-    });
-    setIsWidgetOpen(true);
-  }, [isScriptLoaded, url]);
-
-  const closeCalendly = useCallback(() => {
-    if (window.Calendly && isWidgetOpen) {
-      window.Calendly.closePopupWidget();
-      setIsWidgetOpen(false);
-    }
-  }, [isWidgetOpen]);
-
-  return {
-    openCalendly,
-    closeCalendly,
-    isScriptLoaded,
-    isWidgetOpen,
-  };
+  return isLoaded;
 };

@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useI18n } from '../i18n';
-import CalendlyModal from './CalendlyModal';
+import { useCalendly } from '../hooks/useCalendly';
 
 const CallToAction: React.FC = () => {
   const { t, language } = useI18n();
-  const [showCalendly, setShowCalendly] = useState(false);
+  const isCalendlyLoaded = useCalendly();
 
   const url = language === 'fr' 
     ? 'https://calendly.com/techn9/consultationfr'
     : 'https://calendly.com/techn9/consultationen';
 
-  const handleBookCall = () => {
-    setShowCalendly(true);
+  const handleBookCall = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url });
+    }
   };
 
   return (
@@ -26,6 +29,7 @@ const CallToAction: React.FC = () => {
         
         <button 
           onClick={handleBookCall}
+          disabled={!isCalendlyLoaded}
           className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-black rounded-full bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] hover:from-[#2bb8e3] hover:to-[#40E0D0] transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#40E0D0]/25"
         >
           🔗 Book your call now!
@@ -35,18 +39,6 @@ const CallToAction: React.FC = () => {
           {t('callToAction.noCreditCard')}
         </p>
       </div>
-
-      {/* Calendly Modal */}
-      {showCalendly && (
-        <CalendlyModal 
-          url={url} 
-          onClose={() => setShowCalendly(false)}
-          onError={(error) => {
-            console.error('Calendly Error:', error);
-            setShowCalendly(false);
-          }}
-        />
-      )}
     </section>
   );
 };
