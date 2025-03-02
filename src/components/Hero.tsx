@@ -16,6 +16,10 @@ const Hero = () => {
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleBookCall = () => {
+    setShowCalendly(true);
+  };
+
   return (
     <div className="relative min-h-screen bg-[#111111] hero-pattern flex flex-col items-center justify-center text-center px-4 py-20">
       {/* Gradient overlay */}
@@ -44,7 +48,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             {/* Book a Call Button (Primary) */}
             <button
-              onClick={() => setShowCalendly(true)}
+              onClick={handleBookCall}
               className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-black rounded-full bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] hover:from-[#2bb8e3] hover:to-[#40E0D0] transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#40E0D0]/25"
             >
               {t('hero.cta.secondary')}
@@ -63,7 +67,14 @@ const Hero = () => {
 
       {/* Calendly Modal */}
       {showCalendly && (
-        <CalendlyModal url={url} onClose={() => setShowCalendly(false)} />
+        <CalendlyModal 
+          url={url} 
+          onClose={() => setShowCalendly(false)}
+          onError={(error) => {
+            console.error('Calendly Error:', error);
+            setShowCalendly(false);
+          }}
+        />
       )}
     </div>
   );

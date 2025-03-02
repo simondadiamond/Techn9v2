@@ -10,6 +10,10 @@ const CallToAction: React.FC = () => {
     ? 'https://calendly.com/techn9/consultationfr'
     : 'https://calendly.com/techn9/consultationen';
 
+  const handleBookCall = () => {
+    setShowCalendly(true);
+  };
+
   return (
     <section className="bg-[#0A0A0A] py-20 px-4">
       <div className="max-w-7xl mx-auto text-center border border-gray-800 rounded-xl p-12 bg-[#111111]">
@@ -21,7 +25,7 @@ const CallToAction: React.FC = () => {
         </p>
         
         <button 
-          onClick={() => setShowCalendly(true)}
+          onClick={handleBookCall}
           className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-black rounded-full bg-gradient-to-r from-[#40E0D0] to-[#2bb8e3] hover:from-[#2bb8e3] hover:to-[#40E0D0] transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#40E0D0]/25"
         >
           🔗 Book your call now!
@@ -34,7 +38,14 @@ const CallToAction: React.FC = () => {
 
       {/* Calendly Modal */}
       {showCalendly && (
-        <CalendlyModal url={url} onClose={() => setShowCalendly(false)} />
+        <CalendlyModal 
+          url={url} 
+          onClose={() => setShowCalendly(false)}
+          onError={(error) => {
+            console.error('Calendly Error:', error);
+            setShowCalendly(false);
+          }}
+        />
       )}
     </section>
   );

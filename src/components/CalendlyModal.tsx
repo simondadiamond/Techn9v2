@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCalendly } from '../hooks/useCalendly';
 
 interface CalendlyModalProps {
@@ -14,17 +14,20 @@ const CalendlyModal: React.FC<CalendlyModalProps> = ({
   onLoad,
   onError,
 }) => {
-  const { closeCalendly } = useCalendly({
+  const { openCalendly, closeCalendly, isScriptLoaded } = useCalendly({
     url,
     onLoad,
     onError,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (isScriptLoaded) {
+      openCalendly();
+    }
     return () => {
       closeCalendly();
     };
-  }, [closeCalendly]);
+  }, [isScriptLoaded, openCalendly, closeCalendly]);
 
   return null;
 };
