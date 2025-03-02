@@ -15,11 +15,14 @@ const About = () => {
               {t('about.story.description')}
             </p>
           </div>
-          <div className="relative">
+          <div className="relative w-full h-[330px] overflow-hidden rounded-xl">
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-              alt="Team collaboration" 
-              className="rounded-xl"
+              src="https://images.pexels.com/photos/6153343/pexels-photo-6153343.jpeg" 
+              alt="AI Technology" 
+              className="absolute w-full h-[170%] object-cover object-center"
+              style={{
+                top: '-49%'
+              }}
             />
           </div>
         </div>
