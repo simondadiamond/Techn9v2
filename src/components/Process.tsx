@@ -58,7 +58,7 @@ const ImageDisplay = ({ stepNumber, description }) => {
   const imageData = STEP_IMAGES[stepNumber];
 
   return (
-    <div className="bg-[#1A1A1A] rounded-2xl border border-gray-800 overflow-hidden">
+    <div className="rounded-2xl overflow-hidden">
       <div className="p-4 md:p-8 space-y-4 md:space-y-6">
         <div className="relative">
           {isLoading && (

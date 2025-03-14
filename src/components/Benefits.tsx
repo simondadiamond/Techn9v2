@@ -3,7 +3,7 @@ import { Zap, DollarSign, Settings, BarChart, Target, Database } from 'lucide-re
 import { useI18n } from '../i18n';
 
 const BenefitCard = ({ icon: Icon, title, description }) => (
-  <div className="text-center border border-gray-800 rounded-xl p-6 bg-[#1A1A1A]">
+  <div className="text-center rounded-xl p-6">
     <div className="bg-[#40E0D0] p-3 rounded-lg w-fit mx-auto mb-4">
       <Icon className="h-6 w-6 text-black" />
     </div>

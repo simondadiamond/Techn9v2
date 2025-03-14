@@ -21,6 +21,33 @@
       "secondary": "Book a Call"
     }
   },
+  "callToAction": {
+    "title": "Kickstart your journey with a free 30-minute intro call!",
+    "subtitle": "No pressure, just a friendly chat and expert advice to explore how we can streamline your business.",
+    "buttonText": "Book your call now!",
+    "noCreditCard": "No credit card required."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What types of businesses do you work with?",
+        "answer": "We work with businesses of all sizes across various industries. Whether you're a startup looking to scale or an established enterprise seeking to optimize operations, our solutions can be tailored to meet your specific needs."
+      },
+      {
+        "question": "How long does implementation typically take?",
+        "answer": "Implementation timelines vary depending on the complexity of the solution and your specific requirements. Simple automations can be implemented within a few weeks, while more complex solutions might take 2-3 months. We'll provide a detailed timeline during our initial consultation."
+      },
+      {
+        "question": "What kind of support do you provide after implementation?",
+        "answer": "We provide comprehensive post-implementation support, including monitoring, maintenance, and optimization. Our team is always available to address any questions or concerns, and we regularly review and update solutions to ensure optimal performance."
+      },
+      {
+        "question": "How do you ensure data security?",
+        "answer": "Data security is our top priority. We implement industry-standard security protocols and best practices, including encryption, secure access controls, and regular security audits. All solutions are developed with privacy and security in mind."
+      }
+    ]
+  },
   "services": {
     "title": "Transform your business with AI",
     "workflow": {
@@ -136,38 +163,6 @@
       "subscribe": "Subscribe to Newsletter",
       "send": "Send message"
     }
-  },
-  "callToAction": {
-    "title": "Get started today with a 30min intro call",
-    "subtitle": "A no-strings-attached meet and greet + consultation with Nick 👋",
-    "bookNow": "Book your call now.",
-    "buttonText": "Book intro call →",
-    "noCreditCard": "No credit card required."
-  },
-  "faq": {
-    "title": "Frequently asked questions",
-    "questions": [
-      {
-        "question": "What industries can benefit from AI automation solutions?",
-        "answer": "AI automation solutions can benefit a wide range of industries including healthcare, finance, retail, manufacturing, logistics, and more. Any industry that deals with data processing, customer service, or repetitive tasks can see significant improvements through AI automation."
-      },
-      {
-        "question": "How does AI automation differ from traditional automation methods?",
-        "answer": "AI automation is more sophisticated than traditional automation as it can learn and adapt to new situations, handle complex decision-making, and process unstructured data. Traditional automation follows fixed rules, while AI can evolve and improve over time."
-      },
-      {
-        "question": "What are some common use cases for AI automation?",
-        "answer": "Common use cases include customer service chatbots, document processing, predictive maintenance, fraud detection, inventory management, and personalized marketing campaigns."
-      },
-      {
-        "question": "How can AI automation improve business processes?",
-        "answer": "AI automation can reduce errors, increase speed and efficiency, lower operational costs, improve customer satisfaction, and free up human resources for more strategic tasks."
-      },
-      {
-        "question": "How secure are AI automation solutions?",
-        "answer": "Our AI automation solutions implement industry-standard security protocols, including data encryption, secure APIs, and regular security audits. We comply with relevant data protection regulations and maintain strict privacy controls."
-      }
-    ]
   },
   "footer": {
     "description": "Leveraging cutting-edge AI technologies into your workflow, driving efficiency, innovation, and growth.",

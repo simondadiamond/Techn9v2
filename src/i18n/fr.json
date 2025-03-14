@@ -21,6 +21,33 @@
       "secondary": "Réserver un appel"
     }
   },
+  "callToAction": {
+    "title": "Lancez votre parcours avec un appel d'introduction gratuit de 30 minutes !",
+    "subtitle": "Sans pression, juste une conversation amicale et des conseils d'experts pour explorer comment nous pouvons optimiser votre entreprise.",
+    "buttonText": "Réservez votre appel maintenant !",
+    "noCreditCard": "Aucune carte de crédit requise."
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "items": [
+      {
+        "question": "Avec quels types d'entreprises travaillez-vous ?",
+        "answer": "Nous travaillons avec des entreprises de toutes tailles dans divers secteurs. Que vous soyez une startup cherchant à se développer ou une entreprise établie cherchant à optimiser ses opérations, nos solutions peuvent être adaptées à vos besoins spécifiques."
+      },
+      {
+        "question": "Combien de temps dure généralement la mise en œuvre ?",
+        "answer": "Les délais de mise en œuvre varient en fonction de la complexité de la solution et de vos besoins spécifiques. Les automatisations simples peuvent être mises en œuvre en quelques semaines, tandis que les solutions plus complexes peuvent prendre 2 à 3 mois. Nous fournirons un calendrier détaillé lors de notre consultation initiale."
+      },
+      {
+        "question": "Quel type de support fournissez-vous après la mise en œuvre ?",
+        "answer": "Nous fournissons un support complet après la mise en œuvre, comprenant la surveillance, la maintenance et l'optimisation. Notre équipe est toujours disponible pour répondre à vos questions ou préoccupations, et nous examinons et mettons régulièrement à jour les solutions pour assurer des performances optimales."
+      },
+      {
+        "question": "Comment assurez-vous la sécurité des données ?",
+        "answer": "La sécurité des données est notre priorité absolue. Nous mettons en œuvre des protocoles de sécurité et des meilleures pratiques standard de l'industrie, y compris le chiffrement, des contrôles d'accès sécurisés et des audits de sécurité réguliers. Toutes les solutions sont développées en tenant compte de la confidentialité et de la sécurité."
+      }
+    ]
+  },
   "services": {
     "title": "Transformez votre entreprise avec l'IA",
     "workflow": {
@@ -136,38 +163,6 @@
       "subscribe": "S'abonner à la newsletter",
       "send": "Envoyer le message"
     }
-  },
-  "callToAction": {
-    "title": "Commencez aujourd'hui avec un appel d'introduction de 30 min",
-    "subtitle": "Une rencontre sans engagement + consultation avec Nick 👋",
-    "bookNow": "Réservez votre appel maintenant.",
-    "buttonText": "Réserver un appel d'intro →",
-    "noCreditCard": "Aucune carte de crédit requise."
-  },
-  "faq": {
-    "title": "Questions fréquemment posées",
-    "questions": [
-      {
-        "question": "Quelles industries peuvent bénéficier des solutions d'automatisation d'IA?",
-        "answer": "Les solutions d'automatisation d'IA peuvent bénéficier à un large éventail d'industries, notamment la santé, la finance, la vente au détail, la fabrication, la logistique, et plus encore. Toute industrie qui traite du traitement des données, du service client ou des tâches répétitives peut voir des améliorations significatives grâce à l'automatisation de l'IA."
-      },
-      {
-        "question": "En quoi l'automatisation de l'IA diffère-t-elle des méthodes d'automatisation traditionnelles?",
-        "answer": "L'automatisation de l'IA est plus sophistiquée que l'automatisation traditionnelle car elle peut apprendre et s'adapter à de nouvelles situations, gérer des prises de décision complexes et traiter des données non structurées. L'automatisation traditionnelle suit des règles fixes, tandis que l'IA peut évoluer et s'améliorer avec le temps."
-      },
-      {
-        "question": "Quels sont les cas d'utilisation courants de l'automatisation de l'IA?",
-        "answer": "Les cas d'utilisation courants incluent les chatbots de service client, le traitement de documents, la maintenance prédictive, la détection de fraude, la gestion des stocks et les campagnes marketing personnalisées."
-      },
-      {
-        "question": "Comment l'automatisation de l'IA peut-elle améliorer les processus d'entreprise?",
-        "answer": "L'automatisation de l'IA peut réduire les erreurs, augmenter la vitesse et l'efficacité, réduire les coûts opérationnels, améliorer la satisfaction client et libérer des ressources humaines pour des tâches plus stratégiques."
-      },
-      {
-        "question": "Dans quelle mesure les solutions d'automatisation d'IA sont-elles sécurisées?",
-        "answer": "Nos solutions d'automatisation d'IA mettent en œuvre des protocoles de sécurité standard de l'industrie, y compris le chiffrement des données, des API sécurisées et des audits de sécurité réguliers. Nous respectons les réglementations pertinentes en matière de protection des données et maintenons des contrôles de confidentialité stricts."
-      }
-    ]
   },
   "footer": {
     "description": "Intégration de technologies d'IA de pointe dans votre flux de travail, favorisant l'efficacité, l'innovation et la croissance.",

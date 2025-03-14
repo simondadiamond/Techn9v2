@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { useI18n } from '../i18n';
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState( false);
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
+
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="border-b border-gray-800">
@@ -21,16 +26,16 @@ const FAQItem = ({ question, answer }) => {
   );
 };
 
-const FAQ = () => {
+const FAQ: React.FC = () => {
   const { t } = useI18n();
-  const faqs = t('faq.questions');
+  const faqs = t('faq.items') as FAQItemProps[];
 
   return (
     <section className="bg-[#0A0A0A] py-20 px-4" id="faqs">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-white mb-12">{t('faq.title')}</h2>
         <div className="space-y-4 border border-gray-800 rounded-xl p-8 bg-[#1A1A1A]">
-          {faqs.map((faq, index) => (
+          {Array.isArray(faqs) && faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>

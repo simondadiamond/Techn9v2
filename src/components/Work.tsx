@@ -2,7 +2,7 @@ import React from 'react';
 import { useI18n } from '../i18n';
 
 const WorkCard = ({ category, title, overview, image }) => (
-  <div className="bg-[#1A1A1A] rounded-xl overflow-hidden mb-6 border border-gray-800">
+  <div className="mb-6 overflow-hidden rounded-xl bg-gradient-to-r from-[#111111] to-[#0A0A0A]">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="p-6">
         <div className="text-[#40E0D0] mb-2">{category}</div>
@@ -54,5 +54,3 @@ const Work = () => {
     </section>
   );
 };
-
-export default Work;

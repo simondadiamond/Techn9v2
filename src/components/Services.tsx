@@ -3,7 +3,7 @@ import { Cpu, MessageSquare, LineChart, Target } from 'lucide-react';
 import { useI18n } from '../i18n';
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
-  <div className="text-center bg-[#1A1A1A] rounded-xl p-6 flex flex-col h-full border border-gray-800">
+  <div className="text-center rounded-xl p-6 flex flex-col h-full">
     <div className="bg-[#40E0D0] p-3 rounded-lg w-fit mx-auto mb-4">
       <Icon className="h-6 w-6 text-black" />
     </div>

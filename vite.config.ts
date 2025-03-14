@@ -12,4 +12,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  server: {
+    headers: {
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+    },
+    hmr: {
+      overlay: false // Disable the error overlay
+    },
+    port: 5173,
+    strictPort: true,
+    host: true
+  },
 });
