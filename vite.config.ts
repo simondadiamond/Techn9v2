@@ -5,7 +5,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    include: ['react-router-dom']
   },
   resolve: {
     alias: {
@@ -18,7 +18,7 @@ export default defineConfig({
       'Cross-Origin-Embedder-Policy': 'require-corp',
     },
     hmr: {
-      overlay: false // Disable the error overlay
+      overlay: false
     },
     port: 5173,
     strictPort: true,

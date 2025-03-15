@@ -30,3 +30,5 @@ const About = () => {
     </section>
   );
 };
+
+export default About;
