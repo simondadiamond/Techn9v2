@@ -24,7 +24,6 @@ function MainContent() {
       <Work />
       <About />
       <CallToAction />
-      <FAQ />
     </>
   );
 }

@@ -7,24 +7,24 @@
     "about": "About",
     "faqs": "FAQs",
     "blog": "Blog",
-    "contactUs": "Contact us"
+    "contactUs": "Contact Us"
   },
   "hero": {
     "welcome": "Welcome to Techn9",
     "mainTitle": {
-      "prefix": "Scale Faster with",
-      "highlight": "Smart Automation"
+      "prefix": "Reclaim Your Time.",
+      "highlight": "Redefine Your Business."
     },
-    "subtitle": "Discover tailored automation strategies designed to optimize operations and drive exponential growth.",
+    "subtitle": "Streamline workflows, reduce costs, and maximize efficiency with Techn9.",
     "cta": {
       "primary": "Learn More",
       "secondary": "Book a Call"
     }
   },
   "callToAction": {
-    "title": "Kickstart your journey with a free 30-minute intro call!",
-    "subtitle": "No pressure, just a friendly chat and expert advice to explore how we can streamline your business.",
-    "buttonText": "Book your call now!",
+    "title": "Kickstart Your Automation Journey with a Free 30-Minute Call",
+    "subtitle": "Let’s explore how Techn9 can help you eliminate bottlenecks, free up your team, and drive results—no strings attached.",
+    "buttonText": "Book Your Call Now",
     "noCreditCard": "No credit card required."
   },
   "faq": {
@@ -32,144 +32,144 @@
     "items": [
       {
         "question": "What types of businesses do you work with?",
-        "answer": "We work with businesses of all sizes across various industries. Whether you're a startup looking to scale or an established enterprise seeking to optimize operations, our solutions can be tailored to meet your specific needs."
+        "answer": "We work with businesses of all shapes and sizes—from local property management companies to fast-growing online stores. If you’ve got workflows, we can automate them."
       },
       {
-        "question": "How long does implementation typically take?",
-        "answer": "Implementation timelines vary depending on the complexity of the solution and your specific requirements. Simple automations can be implemented within a few weeks, while more complex solutions might take 2-3 months. We'll provide a detailed timeline during our initial consultation."
+        "question": "How long does implementation take?",
+        "answer": "It depends on complexity. Most projects take 2–6 weeks from strategy to launch. We’ll give you a clear roadmap before we start."
       },
       {
-        "question": "What kind of support do you provide after implementation?",
-        "answer": "We provide comprehensive post-implementation support, including monitoring, maintenance, and optimization. Our team is always available to address any questions or concerns, and we regularly review and update solutions to ensure optimal performance."
+        "question": "Do you offer support after delivery?",
+        "answer": "Absolutely. We don’t disappear after launch. We offer ongoing support, optimization, and updates to ensure your automations keep delivering value."
       },
       {
-        "question": "How do you ensure data security?",
-        "answer": "Data security is our top priority. We implement industry-standard security protocols and best practices, including encryption, secure access controls, and regular security audits. All solutions are developed with privacy and security in mind."
+        "question": "Is my data safe with Techn9?",
+        "answer": "Yes. Data privacy and security are core to our approach. We follow best practices in encryption, permissions, and compliance every step of the way."
       }
     ]
   },
   "services": {
-    "title": "Transform your business with AI",
+    "title": "What We Do",
     "workflow": {
       "title": "Workflow Automation",
-      "description": "Streamline your business processes and boost productivity with our AI-powered workflow automation solutions."
+      "description": "We identify time-consuming processes and build automations that free up your team to do more meaningful work."
     },
     "gpt": {
-      "title": "GPT Development",
-      "description": "Unlock the potential of advanced natural language processing with our GPT development services."
+      "title": "AI Assistant & GPT Solutions",
+      "description": "Create smart, natural-language interfaces for your business that improve support, speed up operations, and enhance decision-making."
     },
     "consulting": {
-      "title": "Business Consulting",
-      "description": "Gain strategic insights and actionable recommendations with our AI-powered business consulting services."
+      "title": "Automation Consulting",
+      "description": "Not sure where to start? We help you identify the best opportunities for automation with an ROI-focused strategy."
     },
     "strategy": {
-      "title": "Strategy Development",
-      "description": "Chart a course for success in the rapidly evolving digital landscape with our AI strategy development services."
+      "title": "AI Strategy Development",
+      "description": "Design a clear roadmap for integrating AI into your operations, aligned with your business goals."
     }
   },
   "process": {
-    "title": "Simple & efficient process",
+    "title": "Streamline Your Operations in Four Simple Steps",
     "step1": {
-      "title": "1. Start with a Conversation",
-      "description": "We begin with a friendly chat to understand your needs, goals, and vision. This is where we explore ideas and see how we can help you achieve your objectives through automation."
+      "title": "Discovery",
+      "description": "We begin with a personalized discovery call to understand your unique challenges and goals. Our experts analyze your workflows, pinpoint inefficiencies, and uncover opportunities where AI-powered automation can save you time and reduce costs."
     },
     "step2": {
-      "title": "2. We Provide a Personalized Plan",
-      "description": "Based on our discussion, we create a clear, customized proposal tailored just for you. We outline the specific solutions, timeline, and expected outcomes so you know exactly what to expect."
+      "title": "Strategy",
+      "description": "Next, we develop a custom automation strategy tailored to your business. Leveraging advanced tools like n8n, Airtable, and Supabase, we design streamlined workflows and integrations that eliminate repetitive tasks and boost productivity."
     },
     "step3": {
-      "title": "3. We Bring Your Ideas to Life",
-      "description": "With the plan in place, we get to work, delivering your solution smoothly and efficiently. We maintain clear communication throughout the process, ensuring you're always informed of our progress."
+      "title": "Implementation",
+      "description": "Once your solution is ready, our experienced team ensures a flawless, low‑downtime implementation. We integrate the new system smoothly into your operations so you can immediately experience improved efficiency without disruption."
     },
     "step4": {
-      "title": "4. We Fine-Tune & Improve",
-      "description": "Once delivered, we monitor and refine the solution to ensure optimal performance. We make data-driven improvements to maximize efficiency and adapt to your evolving needs."
+      "title": "Ongoing Support",
+      "description": "Finally, we continuously fine‑tune your automation solution based on your feedback, ensuring it evolves with your business needs. Our iterative approach guarantees sustained performance and a measurable return on investment."
     }
   },
   "benefits": {
-    "title": "What we offer",
+    "title": "Why Choose Techn9",
     "efficiency": {
-      "title": "Efficiency Improvement",
-      "description": "Streamline your business operations and workflows with AI automation solutions."
+      "title": "Save Time",
+      "description": "Cut down hours of manual work by automating key workflows and recurring tasks."
     },
     "cost": {
-      "title": "Cost Reduction",
-      "description": "Reduce operational costs by automating repetitive tasks and optimizing resource allocation."
+      "title": "Reduce Costs",
+      "description": "Optimize staffing and resources with smart systems that scale with your business."
     },
     "customization": {
-      "title": "Customization",
-      "description": "Tailor AI automation solutions to your specific business needs and objectives."
+      "title": "Fully Tailored",
+      "description": "Every automation we build is customized to match your exact needs, tools, and goals."
     },
     "scalability": {
-      "title": "Scalability",
-      "description": "Scale your operations seamlessly with AI automation that can adapt to your growing business needs."
+      "title": "Built to Scale",
+      "description": "Our systems grow with you—no need to rebuild as your team, tenants, or customers increase."
     },
     "accuracy": {
-      "title": "Improved Accuracy",
-      "description": "Increase accuracy and reduce errors in data processing and decision-making with AI-driven solutions."
+      "title": "Fewer Errors",
+      "description": "Improve consistency and eliminate human errors with reliable automation logic."
     },
     "insights": {
-      "title": "Data Insights",
-      "description": "Unlock valuable insights from your data, enabling data-driven decision-making and strategic planning."
+      "title": "Actionable Data",
+      "description": "Turn your data into clear reports and insights so you can make smarter business decisions."
     }
   },
   "work": {
-    "title": "Some of our work",
+    "title": "Recent Projects",
     "projects": {
       "ecommerce": {
         "year": "2023",
         "category": "E-commerce",
-        "title": "Streamlining customer support",
-        "overview": "We examine how a company optimized its customer support processes using AI automation. By implementing an AI-powered chatbot, the company streamlined its customer interactions, reducing response times and enhancing user satisfaction."
+        "title": "Scaling Customer Support with AI",
+        "overview": "An online store cut response times by 60% by integrating a smart chatbot that handled common customer queries automatically."
       },
       "finance": {
         "year": "2024",
         "category": "Finance",
-        "title": "Automating Document Processing",
-        "overview": "This case study explores how a financial institution automated its document processing tasks using AI technology. By deploying an AI-driven system capable of extracting and analyzing data from various documents, the company was able to streamline its operations, reduce errors, and expedite decision-making processes."
+        "title": "Automating Compliance Reports",
+        "overview": "We built a system to generate and submit recurring financial compliance reports with zero manual intervention—saving hundreds of hours per year."
       },
       "retail": {
         "year": "2024",
         "category": "Retail",
-        "title": "Enhancing Marketing Personalization",
-        "overview": "We investigate how a retail company leveraged AI automation to enhance its marketing personalization efforts. By utilizing AI algorithms to analyze customer data and deliver personalized product recommendations and promotions, the company achieved higher engagement and conversion rates."
+        "title": "Personalized Marketing on Autopilot",
+        "overview": "By combining customer data with AI-driven content creation, this retail client boosted their email click-through rate by 43%."
       }
     }
   },
   "about": {
-    "title": "Who we are",
+    "title": "Meet Techn9",
     "story": {
-      "title": "Our story",
-      "description": "Welcome to Techn9! We believe that artificial intelligence and automation should be accessible, practical, and transformative for businesses of all sizes. Our goal is to help organizations streamline operations, boost efficiency, and unlock new opportunities with AI-powered solutions tailored to their unique needs. Whether you're looking to automate routine tasks or enhance decision-making with smart technology, we're here to make AI work for you—without the complexity. Let's build a smarter, more efficient future together."
+      "title": "Your Trusted Automation Partner",
+      "description": "I am Simon Paris, founder of Techn9. I believe smart, streamlined automation can transform your business. My mission is to help forward-thinking companies save time, reduce costs, and drive sustainable growth with tailored AI solutions. Whether you manage a portfolio of rental properties or lead a growing enterprise, I deliver practical, powerful, and personalized results that truly move the needle."
     }
   },
   "contact": {
-    "title": "Reach out to us",
-    "getInTouch": "Get in touch",
+    "title": "Let’s Talk",
+    "getInTouch": "Reach out anytime",
     "email": "Email:",
     "emailAddress": "info@techn9.com",
     "phone": "Phone:",
-    "phoneNumber": "(123) 456 7890",
+    "phoneNumber": "(123) 456-7890",
     "address": "Address:",
-    "addressDetails": "Street Address\nYour City, State, Zip Code\nCountry",
+    "addressDetails": "123 Automation Lane\nYour City, State, ZIP\nCountry",
     "followUs": "Follow us:",
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
       "namePlaceholder": "Jane Smith",
-      "emailPlaceholder": "email@gmail.com",
-      "messagePlaceholder": "Hello!",
-      "subscribe": "Subscribe to Newsletter",
-      "send": "Send message"
+      "emailPlaceholder": "you@yourcompany.com",
+      "messagePlaceholder": "I'd love to talk automation...",
+      "subscribe": "Subscribe to Updates",
+      "send": "Send Message"
     }
   },
   "footer": {
-    "description": "Leveraging cutting-edge AI technologies into your workflow, driving efficiency, innovation, and growth.",
-    "getStarted": "Get started",
-    "navigation": "Navigation",
-    "legal": "Legal",
-    "getInTouch": "Get in touch",
-    "copyright": "© Copyright 2025"
+    "description": "Techn9 helps businesses save time, cut costs, and scale faster with intelligent AI and workflow automation.",
+    "getStarted": "Start your automation journey",
+    "navigation": "Explore",
+    "legal": "Legal Info",
+    "getInTouch": "Contact",
+    "copyright": "© Copyright 2025 Techn9"
   }
 }

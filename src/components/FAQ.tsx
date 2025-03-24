@@ -26,6 +26,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   );
 };
 
+
 const FAQ: React.FC = () => {
   const { t } = useI18n();
   const faqs = t('faq.items') as FAQItemProps[];
