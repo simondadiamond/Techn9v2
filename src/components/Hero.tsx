@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-cover bg-center" style={{ backgroundImage: "url('https://replicate.delivery/xezq/EcNcheKimeiIqEJw7nedZC2UfF16JS7TvhjmqFC5FAcnJPvRB/out-2.webp')" }}>
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-cover bg-center" style={{ backgroundImage: "url('https://github.com/simondadiamond/techn9-media/blob/64637c5fb7251d5836c9bec3d8deb3b5c72f4fa7/skyscrapers.webp?raw=true')" }}>
       <div className="absolute inset-0 bg-black/75 pointer-events-none" />
       
       <motion.div 
