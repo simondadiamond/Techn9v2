@@ -3,7 +3,8 @@ import { Menu, X } from 'lucide-react';
 import { useI18n } from '../i18n';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logo from '../../media/techn9-logo.png';
+
+const logoUrl = 'https://github.com/simondadiamond/techn9-media/blob/63ff8bc48fd105deb4e4c68265ef1610e19d6818/techn9-logo-darkbg.png';
 
 const Navbar = () => {
   const { t } = useI18n();
@@ -57,8 +58,8 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center w-full md:w-auto">
           <div className="text-white text-xl font-semibold tracking-wider">
-	     <img 
-              src= {logo} 
+            <img 
+              src={logoUrl} 
               alt="TECHN9" 
               className="h-6 md:h-8 w-auto"
               style={{

@@ -31,7 +31,7 @@ export function updateURLParameter(baseURL: string, param: string, value: string
 }
 
 /**
- * Creates a consultation URL with the current language
+ * Creates a consultation URL with the current language and source
  */
 export function createConsultationURL(language: string): string {
   const BASE_URL = 'https://consultation.techn9.com/';
@@ -41,5 +41,9 @@ export function createConsultationURL(language: string): string {
     language = 'en'; // Default to English if invalid
   }
   
-  return updateURLParameter(BASE_URL, 'lang', language);
+  // Add language and source parameters
+  let url = updateURLParameter(BASE_URL, 'lang', language);
+  url = updateURLParameter(url, 'source', 'techn9.com');
+  
+  return url;
 }
