@@ -40,7 +40,7 @@ const Navbar = () => {
       className={`
         fixed z-50 
         top-6 left-1/2 transform -translate-x-1/2
-        w-[95%] max-w-7xl
+        w-full max-w-7xl
         transition-all duration-300
         ${scrolled ? 'shadow-md' : ''}
       `}
@@ -61,7 +61,7 @@ const Navbar = () => {
             <img 
               src={logoUrl} 
               alt="TECHN9" 
-              className="h-6 md:h-8 w-auto"
+              className="h-6 md:h-8 w-auto max-w-full"
               style={{
                 mixBlendMode: 'screen'
               }}
