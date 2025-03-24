@@ -4,7 +4,7 @@ import { useI18n } from '../i18n';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const logoUrl = 'https://github.com/simondadiamond/techn9-media/blob/63ff8bc48fd105deb4e4c68265ef1610e19d6818/techn9-logo-darkbg.png';
+const logoUrl = 'https://github.com/simondadiamond/techn9-media/blob/63ff8bc48fd105deb4e4c68265ef1610e19d6818/techn9-logo-darkbg.png?raw=true';
 
 const Navbar = () => {
   const { t } = useI18n();
