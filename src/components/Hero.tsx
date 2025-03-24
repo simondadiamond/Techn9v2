@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-cover bg-center" style={{ backgroundImage: "url('https://replicate.delivery/xezq/EcNcheKimeiIqEJw7nedZC2UfF16JS7TvhjmqFC5FAcnJPvRB/out-2.webp')" }}>
-      <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/75 pointer-events-none" />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
