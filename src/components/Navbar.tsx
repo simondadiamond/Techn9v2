@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useI18n } from '../i18n';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -13,24 +13,41 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [logoLoaded, setLogoLoaded] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Ensure navbar is rendered correctly on initial load and after navigation
+    const forceRender = () => {
+      if (navRef.current) {
+        navRef.current.style.display = 'none';
+        requestAnimationFrame(() => {
+          if (navRef.current) {
+            navRef.current.style.display = '';
+          }
+        });
+      }
+    };
+
+    // Call force render on initial load and route changes
+    forceRender();
+
     const handleScroll = () => {
-      // More sensitive scroll detection
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setScrolled(scrollTop > 10);
+      setScrolled(window.scrollY > 10);
     };
 
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Ensure initial state is correct
-    handleScroll();
+    // Add route change listener
+    const unlisten = navigate(() => {
+      forceRender();
+      return () => unlisten();
+    });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [navigate]);
 
   const handleNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
@@ -48,27 +65,27 @@ const Navbar = () => {
 
   return (
     <nav
+      ref={navRef}
       className={`
-        fixed top-0 left-0 right-0 
-        z-50 
-        w-full // Full width to prevent layout issues
-        transition-all duration-300 ease-in-out
-        ${scrolled ? 'shadow-lg bg-stone-950/90 backdrop-blur-sm' : 'bg-transparent'}
+        fixed z-50 
+        top-2 left-1/2 transform -translate-x-1/2
+        w-[97%]
+        transition-all duration-300
+        ${scrolled ? 'shadow-md' : ''}
       `}
-      style={{ 
-        transform: 'translateZ(0)', // Hardware acceleration
-        willChange: 'transform, opacity' // Performance hint
-      }}
     >
-      <div 
+      <div
         className={`
-          container mx-auto // Use container for max-width and centering
           flex flex-col md:flex-row justify-between items-center
-          px-4 py-3
-          ${scrolled ? 'border-b border-gray-800/50' : ''}
+          px-4 py-2
+          bg-stone-950
+          border border-gray-700/50
+          rounded-md
+          transition-all duration-300
+          ${scrolled ? 'shadow-md' : ''}
         `}
       >
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full md:w-auto">
           <div 
             className="text-white text-xl font-semibold tracking-wider flex-shrink-0"
             style={{ width: '120px', height: '32px' }}
