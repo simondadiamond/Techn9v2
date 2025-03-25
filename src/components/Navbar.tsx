@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useI18n } from '../i18n';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -12,33 +12,12 @@ const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [logoLoaded, setLogoLoaded] = useState(false);
-  const navRef = useRef<HTMLDivElement>(null);
-
-  // Use layout effect to trigger initial sizing
-  useLayoutEffect(() => {
-    const adjustNavWidth = () => {
-      if (navRef.current) {
-        // Force a reflow and reset
-        navRef.current.style.width = '97%';
-        navRef.current.style.left = '50%';
-        navRef.current.style.transform = 'translateX(-50%)';
-      }
-    };
-
-    // Adjust on initial render and after a short delay
-    adjustNavWidth();
-    const timer = setTimeout(adjustNavWidth, 100);
-
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -58,14 +37,14 @@ const Navbar = () => {
 
   return (
     <nav
-      ref={navRef}
       className={`
         fixed z-50 
-        top-2 left-1/2 transform -translate-x-1/2
-        w-[97%]
+        top-0 left-0 right-0 
+        mx-auto
         transition-all duration-300
         ${scrolled ? 'shadow-md' : ''}
       `}
+      style={{ maxWidth: '100%', overflow: 'hidden' }}
     >
       <div
         className={`
@@ -75,8 +54,6 @@ const Navbar = () => {
           border border-gray-700/50
           rounded-md
           max-w-full
-          overflow-x-hidden
-          ${scrolled ? 'shadow-md' : ''}
         `}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
