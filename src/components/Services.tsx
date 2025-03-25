@@ -76,7 +76,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="bg-[#0A0A0A] py-20 px-4" id="services" ref={ref}>
+    <section className="bg-[#0A0A0A] pt-12 pb-20 px-4" id="services" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-12"
