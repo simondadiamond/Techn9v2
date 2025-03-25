@@ -16,10 +16,20 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      // More sensitive scroll detection
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setScrolled(scrollTop > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Ensure initial state is correct
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleNavigation = (sectionId: string) => {
@@ -39,27 +49,26 @@ const Navbar = () => {
   return (
     <nav
       className={`
-        fixed z-50 
-        top-2 left-0 right-0 
-        mx-2 // Add horizontal margin to prevent full-width stretch
-        transition-all duration-300
-        ${scrolled ? 'shadow-md' : ''}
+        fixed top-0 left-0 right-0 
+        z-50 
+        w-full // Full width to prevent layout issues
+        transition-all duration-300 ease-in-out
+        ${scrolled ? 'shadow-lg bg-stone-950/90 backdrop-blur-sm' : 'bg-transparent'}
       `}
+      style={{ 
+        transform: 'translateZ(0)', // Hardware acceleration
+        willChange: 'transform, opacity' // Performance hint
+      }}
     >
-      <div
+      <div 
         className={`
+          container mx-auto // Use container for max-width and centering
           flex flex-col md:flex-row justify-between items-center
-          px-4 py-2
-          bg-stone-950
-          border border-gray-700/50
-          rounded-md
-          transition-all duration-300
-          max-w-full // Ensure it doesn't exceed viewport width
-          overflow-x-hidden // Prevent horizontal scrolling
-          ${scrolled ? 'shadow-md' : ''}
+          px-4 py-3
+          ${scrolled ? 'border-b border-gray-800/50' : ''}
         `}
       >
-        <div className="flex justify-between items-center w-full md:w-auto">
+        <div className="flex justify-between items-center w-full">
           <div 
             className="text-white text-xl font-semibold tracking-wider flex-shrink-0"
             style={{ width: '120px', height: '32px' }}
@@ -73,7 +82,7 @@ const Navbar = () => {
               `}
               style={{ 
                 mixBlendMode: 'screen',
-                maxWidth: '120px' // Explicitly limit width
+                maxWidth: '120px'
               }}
               onLoad={() => setLogoLoaded(true)}
             />
