@@ -40,8 +40,8 @@ const Navbar = () => {
     <nav
       className={`
         fixed z-50 
-        top-2 left-1/2 transform -translate-x-1/2
-        w-[97%]
+        top-2 left-0 right-0 
+        mx-2 // Add horizontal margin to prevent full-width stretch
         transition-all duration-300
         ${scrolled ? 'shadow-md' : ''}
       `}
@@ -54,13 +54,14 @@ const Navbar = () => {
           border border-gray-700/50
           rounded-md
           transition-all duration-300
+          max-w-full // Ensure it doesn't exceed viewport width
+          overflow-x-hidden // Prevent horizontal scrolling
           ${scrolled ? 'shadow-md' : ''}
         `}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
           <div 
-            className="text-white text-xl font-semibold tracking-wider"
-            // Maintain consistent width with placeholder
+            className="text-white text-xl font-semibold tracking-wider flex-shrink-0"
             style={{ width: '120px', height: '32px' }}
           >
             <img 
@@ -70,7 +71,10 @@ const Navbar = () => {
                 ${logoLoaded ? 'opacity-100' : 'opacity-0'}
                 h-full w-auto max-w-full object-contain
               `}
-              style={{ mixBlendMode: 'screen' }}
+              style={{ 
+                mixBlendMode: 'screen',
+                maxWidth: '120px' // Explicitly limit width
+              }}
               onLoad={() => setLogoLoaded(true)}
             />
             {!logoLoaded && (
