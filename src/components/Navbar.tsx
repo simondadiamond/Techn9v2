@@ -42,9 +42,9 @@ const Navbar = () => {
         top-0 left-0 right-0 
         mx-auto
         transition-all duration-300
-        ${scrolled ? 'shadow-md' : ''}
+        ${scrolled ? 'shadow-md bg-opacity-90' : 'bg-opacity-100'}
       `}
-      style={{ maxWidth: '100%', overflow: 'hidden' }}
+      style={{ maxWidth: '100%', overflow: 'hidden', backgroundColor: 'rgba(18, 18, 18, 0.95)' }}
     >
       <div
         className={`
