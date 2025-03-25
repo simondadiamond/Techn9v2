@@ -42,9 +42,9 @@ const Navbar = () => {
         top-0 left-0 right-0 
         mx-auto
         transition-all duration-300
-        ${scrolled ? 'shadow-md bg-opacity-90' : 'bg-opacity-100'}
+        ${scrolled ? 'shadow-md' : ''}
       `}
-      style={{ maxWidth: '100%', overflow: 'hidden', backgroundColor: 'rgba(18, 18, 18, 0.95)' }}
+      style={{ maxWidth: '100%', overflow: 'hidden' }}
     >
       <div
         className={`
@@ -53,7 +53,8 @@ const Navbar = () => {
           bg-stone-950
           border border-gray-700/50
           rounded-md
-          max-w-full
+          max-w-7xl
+          mx-auto
         `}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
