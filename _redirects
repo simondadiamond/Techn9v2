@@ -1,2 +1,3 @@
-/blog/*  https://blog.techn9.com/:splat  200
+/blog/* https://blog.techn9.com/:splat 200
   X-Forwarded-Host: techn9.com
+  X-Forwarded-Proto: https
