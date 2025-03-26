@@ -1,6 +1,1 @@
-# Proxy all /blog traffic to Ghost (hosted on blog.techn9.com)
-# without rewriting the URL in the browser
-/blog/* https://blog.techn9.com/:splat 200
-
-# Optional: redirect www to root domain
-https://www.techn9.com/* https://techn9.com/:splat 301!
+/blog/*  https://blog.techn9.com/:splat  200
