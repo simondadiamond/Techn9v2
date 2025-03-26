@@ -1,1 +1,7 @@
-/blog/* https://blog.techn9.com/:splat 200
+# Force HTTPS and remove www
+https://www.techn9.com/* https://techn9.com/:splat 301!
+
+# Reverse proxy /blog to your Ghost droplet
+/blog/*  https://blog.techn9.com/:splat 200
+  X-Forwarded-Host: techn9.com
+  X-Forwarded-Proto: https
