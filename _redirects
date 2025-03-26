@@ -1,4 +1,4 @@
-# Force HTTPS and remove www
+# Redirect www to non-www (permanent)
 https://www.techn9.com/* https://techn9.com/:splat 301!
 
 # Reverse proxy /blog to your Ghost droplet
