@@ -1,7 +1,6 @@
-# Redirect www to non-www (permanent)
-https://www.techn9.com/* https://techn9.com/:splat 301!
+# Proxy all /blog traffic to Ghost (hosted on blog.techn9.com)
+# without rewriting the URL in the browser
+/blog/* https://blog.techn9.com/:splat 200
 
-# Reverse proxy /blog to your Ghost droplet
-/blog/*  https://blog.techn9.com/:splat 200
-  X-Forwarded-Host: techn9.com
-  X-Forwarded-Proto: https
+# Optional: redirect www to root domain
+https://www.techn9.com/* https://techn9.com/:splat 301!
