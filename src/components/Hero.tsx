@@ -48,11 +48,11 @@ const Hero = () => {
       className={`relative w-full flex flex-col items-center justify-center text-center bg-cover bg-center ${screenSize === 'xl' ? 'h-[60vh]' : screenSize === 'lg' ? 'h-[68vh]' : screenSize === 'md' ? 'h-[75vh]' : screenSize === 'sm' ? 'h-[85vh]' : 'h-screen'} pt-20 sm:pt-24`}
       style={{ 
         backgroundImage: "url('https://github.com/simondadiamond/techn9-media/blob/5c9bbb244fff0c9f5d2e32690ac452c02c4c1b4a/techn9-hero.png?raw=true')",
-        backgroundPosition: '65% 30%'
+        backgroundPosition: screenSize === 'xs' ? 'left center' : 'center'
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/75" />
+      <div className="absolute inset-0 bg-black/70" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 md:space-y-8">

@@ -4,14 +4,14 @@ import { useI18n } from '../i18n';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const logoUrl = 'https://github.com/simondadiamond/techn9-media/blob/63ff8bc48fd105deb4e4c68265ef1610e19d6818/techn9-logo-darkbg.png';
+const logoUrl = 'https://github.com/simondadiamond/techn9-media/blob/63ff8bc48fd105deb4e4c68265ef1610e19d6818/techn9-logo-darkbg.png?raw=true';
 
 const Navbar = () => {
   const { t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,49 +39,45 @@ const Navbar = () => {
     <nav
       className={`
         fixed z-50
-        top-0 left-0 right-0 w-full
+        top-0 left-0 right-0 w-full // Use w-full, removed mx-auto
         transition-all duration-300
         ${scrolled ? 'bg-black shadow-md' : 'bg-transparent'}
       `}
+      // Removed the inline style with overflow: hidden and maxWidth
     >
       <div
         className={`
-          flex flex-wrap items-center // REMOVED justify-between here
+          flex flex-wrap justify-between items-center // Added flex-wrap as a safeguard
           px-4 py-2
-          max-w-7xl
-          mx-auto
+          max-w-7xl // Optional: Constrain content width on very wide screens
+          mx-auto  // Centers the content if max-w is applied
         `}
       >
         {/* Logo and Mobile Toggle Container */}
-        {/* MODIFICATION 1: Removed 'justify-between' from this div */}
-        <div className="flex items-center w-full md:w-auto">
-
-          {/* Logo Div */}
-          {/* MODIFICATION 2: Added 'mr-auto' to this div */}
+        <div className="flex justify-between items-center w-full md:w-auto flex-shrink-0 mr-4"> {/* Added mr-4 for spacing, ensure logo doesn't prevent shrinking unnecessarily if space is tight */}
           <div
-            className="flex-shrink-0 mr-auto" // Added mr-auto here
+            className="text-white text-xl font-semibold tracking-wider"
+            // Removed fixed width/height style - let content size it or use Tailwind classes
           >
-						{/*   <img
+            <img
               src={logoUrl}
               alt="TECHN9"
               className="h-8 w-auto" // Use Tailwind height, let width be auto
               style={{
                 mixBlendMode: 'screen',
-                // maxWidth: '120px' // Optional: Adjust if needed
+                // maxWidth: '120px' // Can keep if needed, but h-8 might be enough
               }}
-            /> */}
+            />
           </div>
-
-          {/* Mobile Right Side Group (Only visible < md) */}
           <div className="md:hidden flex items-center">
-             {/* LanguageSwitcher is already removed based on your previous test
+            <LanguageSwitcher />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="ml-4 text-gray-300 focus:outline-none" // Keeping ml-4 for now, adjust if needed
-              aria-label="Toggle menu"
+              className="ml-4 text-gray-300 focus:outline-none"
+              aria-label="Toggle menu" // Added aria-label for accessibility
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button> */}
+            </button>
           </div>
         </div>
 
@@ -104,14 +100,11 @@ const Navbar = () => {
              <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.faqs')}
              </button>
-             <button 
-							  onClick={() => window.location.href = 'https://techn9.com/blog'} 
-							  className="text-gray-300 hover:text-white whitespace-nowrap"
-							>
-							  {t('nav.blog')}
-							</button>
-             {/* Moved LanguageSwitcher here for desktop 
-             <LanguageSwitcher />*/}
+             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
+               {t('nav.blog')}
+             </button>
+             {/* Moved LanguageSwitcher here for desktop */}
+             <LanguageSwitcher />
            </div>
         </div>
 
