@@ -83,24 +83,25 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         {/* Grouped Nav and Language Switcher for better flex control */}
         <div className="hidden md:flex flex-grow items-center justify-end"> {/* Use flex-grow to take remaining space, justify-end */}
-           {/* TESTING STEP 1: Removed whitespace-nowrap from all buttons below */}
-           <div className="flex space-x-4 md:space-x-6 items-center">
-             <button onClick={() => handleNavigation('services')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+           {/* TESTING STEP 2: Added min-w-0 to the div below */}
+           <div className="flex space-x-4 md:space-x-6 items-center min-w-0"> {/* Added min-w-0 */}
+             {/* Keep whitespace-nowrap on buttons for this test */}
+             <button onClick={() => handleNavigation('services')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.services')}
              </button>
-             <button onClick={() => handleNavigation('process')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+             <button onClick={() => handleNavigation('process')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.process')}
              </button>
-             <button onClick={() => handleNavigation('work')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+             <button onClick={() => handleNavigation('work')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.work')}
              </button>
-             <button onClick={() => handleNavigation('about')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+             <button onClick={() => handleNavigation('about')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.about')}
              </button>
-             <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+             <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white whitespace-nowrap">
                 {t('nav.faqs')}
              </button>
-             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.blog')}
              </button>
              {/* Moved LanguageSwitcher here for desktop */}
