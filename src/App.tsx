@@ -1,59 +1,58 @@
-// app.tsx - TEMPORARY TEST - NAVBAR + HERO + SERVICES
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Keep Navbar import
-import Hero from './components/Hero'; // Keep Hero import
-import Services from './components/Services'; // *** UNCOMMENT Services import ***
-// Comment out imports for components not being rendered in this test:
-// import Process from './components/Process';
-// import Benefits from './components/Benefits';
-// import Work from './components/Work';
-// import About from './components/About';
-// import FAQ from './components/FAQ';
-// import Footer from './components/Footer';
-// import CallToAction from './components/CallToAction';
-import Privacy from './components/Privacy'; // Keep if you want to test this route
-import Terms from './components/Terms'; // Keep if you want to test this route
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Process from './components/Process';
+import Benefits from './components/Benefits';
+import Work from './components/Work';
+import About from './components/About';
+import FAQ from './components/FAQ'; // Assuming you have FAQ, add if needed
+import Footer from './components/Footer';
+import CallToAction from './components/CallToAction';
+import Privacy from './components/Privacy';
+import Terms from './components/Terms';
+// Import any other components like Blog if necessary
 import { I18nProvider } from './i18n';
 
-// Comment out MainContent function definition for this test
-/*
-function MainContent() { ... }
-*/
+// MainContent component to group sections for the main route
+function MainContent() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Process />
+      <Benefits />
+      <Work />
+      <About />
+      {/* Assuming CTA and FAQ come after About */}
+      <CallToAction />
+      <FAQ />
+    </>
+  );
+}
 
 function App() {
   return (
     <I18nProvider>
       <Router>
+        {/* Main wrapper div */}
         <div className="bg-black min-h-screen">
-          <Navbar /> {/* Original Navbar */}
+          <Navbar />
 
           <Routes>
-            {/* Route for '/': Render Hero AND Services */}
-            <Route path="/" element={
-              <>
-                <Hero />
-                <Services /> {/* *** ADD Services component here *** */}
-                {/* --- Other components still commented out --- */}
-                {/* <Process /> */}
-                {/* <Benefits /> */}
-                {/* <Work /> */}
-                {/* <About /> */}
-                {/* <CallToAction /> */}
-                {/* <FAQ /> */}
-              </>
-            } />
+            {/* Main route rendering all sections */}
+            <Route path="/" element={<MainContent />} />
 
-            {/* Keep other routes */}
+            {/* Other specific routes */}
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-
+            {/* Add other routes like /blog if needed */}
+            {/* <Route path="/blog" element={<Blog />} /> */}
           </Routes>
 
-          {/* --- Footer still commented out --- */}
-          {/* <Footer /> */}
-
+          {/* Footer rendered on all pages (outside Routes might be better if needed everywhere) */}
+          <Footer />
         </div>
       </Router>
     </I18nProvider>

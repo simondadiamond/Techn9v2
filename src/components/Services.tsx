@@ -11,29 +11,32 @@ const ServiceCard = ({ icon: Icon, title, description, index }) => {
   });
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      // *** MODIFICATION: Changed initial x and animate x to 0 ***
+      initial={{ opacity: 0, x: 0 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
+      // *** END MODIFICATION ***
       transition={{ duration: 0.8, delay: index * 0.2 }}
       className="text-center rounded-xl p-6 flex flex-col h-full hover:bg-white/5 transition-colors duration-300"
     >
-      <motion.div 
+      <motion.div
         className="bg-[#40E0D0] p-3 rounded-lg w-fit mx-auto mb-4"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >
         <Icon className="h-6 w-6 text-black" />
       </motion.div>
-      <motion.h3 
+      <motion.h3
         className="text-white text-xl font-semibold mb-3"
+        // Keeping opacity/delay animations for title/paragraph
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
       >
         {title}
       </motion.h3>
-      <motion.p 
+      <motion.p
         className="text-gray-400"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
@@ -76,9 +79,10 @@ const Services = () => {
   ];
 
   return (
+    // Using ref for the section-level animation trigger
     <section className="bg-[#0A0A0A] pt-12 pb-20 px-4" id="services" ref={ref}>
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
