@@ -54,10 +54,9 @@ const Navbar = () => {
         `}
       >
         {/* Logo and Mobile Toggle Container */}
-        <div className="flex justify-between items-center w-full md:w-auto flex-shrink-0 mr-4"> {/* Added mr-4 for spacing, ensure logo doesn't prevent shrinking unnecessarily if space is tight */}
+        <div className="flex justify-between items-center w-full md:w-auto flex-shrink-0 mr-4"> {/* Added mr-4 for spacing */}
           <div
             className="text-white text-xl font-semibold tracking-wider"
-            // Removed fixed width/height style - let content size it or use Tailwind classes
           >
             <img
               src={logoUrl}
@@ -84,23 +83,24 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         {/* Grouped Nav and Language Switcher for better flex control */}
         <div className="hidden md:flex flex-grow items-center justify-end"> {/* Use flex-grow to take remaining space, justify-end */}
+           {/* TESTING STEP 1: Removed whitespace-nowrap from all buttons below */}
            <div className="flex space-x-4 md:space-x-6 items-center">
-             <button onClick={() => handleNavigation('services')} className="text-gray-300 hover:text-white whitespace-nowrap"> {/* Added whitespace-nowrap */}
+             <button onClick={() => handleNavigation('services')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
                {t('nav.services')}
              </button>
-             <button onClick={() => handleNavigation('process')} className="text-gray-300 hover:text-white whitespace-nowrap">
+             <button onClick={() => handleNavigation('process')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
                {t('nav.process')}
              </button>
-             <button onClick={() => handleNavigation('work')} className="text-gray-300 hover:text-white whitespace-nowrap">
+             <button onClick={() => handleNavigation('work')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
                {t('nav.work')}
              </button>
-             <button onClick={() => handleNavigation('about')} className="text-gray-300 hover:text-white whitespace-nowrap">
+             <button onClick={() => handleNavigation('about')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
                {t('nav.about')}
              </button>
-             <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white whitespace-nowrap">
-               {t('nav.faqs')}
+             <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
+                {t('nav.faqs')}
              </button>
-             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
+             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white"> {/* Removed whitespace-nowrap */}
                {t('nav.blog')}
              </button>
              {/* Moved LanguageSwitcher here for desktop */}
@@ -113,17 +113,26 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden w-full border-t border-gray-700 mt-2 pt-2"> {/* Adjusted border color/spacing */}
             <div className="flex flex-col items-center space-y-2">
-              {/* Mobile links... (keep as they were) */}
-               <button onClick={() => handleNavigation('services')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
-                {t('nav.services')}
-              </button>
-              <button onClick={() => handleNavigation('process')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
-                {t('nav.process')}
-              </button>
-              {/* ... other mobile links */}
+              {/* Mobile links... */}
+                <button onClick={() => handleNavigation('services')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
+                 {t('nav.services')}
+               </button>
+               <button onClick={() => handleNavigation('process')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
+                 {t('nav.process')}
+               </button>
+                {/* Add other mobile links similarly */}
+                 <button onClick={() => handleNavigation('work')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
+                   {t('nav.work')}
+                 </button>
+                 <button onClick={() => handleNavigation('about')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
+                   {t('nav.about')}
+                 </button>
+                  <button onClick={() => handleNavigation('faqs')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
+                   {t('nav.faqs')}
+                 </button>
                <button onClick={() => navigate('/blog')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
-                 {t('nav.blog')}
-              </button>
+                  {t('nav.blog')}
+               </button>
             </div>
           </div>
         )}
