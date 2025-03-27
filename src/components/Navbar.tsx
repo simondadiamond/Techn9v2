@@ -1,54 +1,42 @@
-import React, { useState, useEffect } from 'react';
-// import { Menu, X } from 'lucide-react'; // Removed
-// import { useI18n } from '../i18n'; // Removed
-// import LanguageSwitcher from './LanguageSwitcher'; // Removed
-// import { useNavigate, useLocation } from 'react-router-dom'; // Removed
+// app.tsx - TEMPORARY TEST - ONLY RENDER NAVBAR
 
-// const logoUrl = '...'; // Removed
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+// Import other components if needed by Navbar, but they won't be rendered directly here
+// import Hero from './components/Hero';
+// import Services from './components/Services';
+// ... etc ...
+// import Footer from './components/Footer';
+import { I18nProvider } from './i18n';
 
-const Navbar = () => {
-  // const { t } = useI18n(); // Removed
-  // const navigate = useNavigate(); // Removed
-  // const location = useLocation(); // Removed
-  // const [isMenuOpen, setIsMenuOpen] = useState(false); // Removed
-  const [scrolled, setScrolled] = useState(false);
+// MainContent function might not be needed for this test
+// function MainContent() { ... }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // const handleNavigation = (sectionId: string) => { ... }; // Removed
-
+function App() {
   return (
-    <nav
-      className={`
-        fixed z-50
-        top-0 left-0 right-0 w-full
-        transition-all duration-300
-        ${scrolled ? 'bg-black shadow-md' : 'bg-red-500'} /* Changed transparent to red for visibility */
-        h-16 /* Added temporary height */
-      `}
-    >
-      <div
-        className={`
-          flex justify-between items-center /* Kept basic flex */
-          px-4 py-2
-          max-w-7xl
-          mx-auto
-          h-full /* Make inner div fill nav height */
-          border border-blue-500 /* Added border for visibility */
-        `}
-      >
-         {/* --- All Content Removed --- */}
-         <div className="text-white">Simplified Nav - Left</div>
-         <div className="text-white">Simplified Nav - Right</div>
-      </div>
-    </nav>
-  );
-};
+    <I18nProvider>
+      <Router>
+        {/* Ensure no overflow-x-hidden here if you added it before */}
+        <div className="bg-black min-h-screen">
 
-export default Navbar;
+          <Navbar /> {/* Use your ORIGINAL Navbar component code */}
+
+          {/* --- Temporarily Comment Out Routes and Footer --- */}
+          {/*
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+          </Routes>
+          <Footer />
+          */}
+          {/* --- End of Temporarily Commented Out Section --- */}
+
+        </div>
+      </Router>
+    </I18nProvider>
+  );
+}
+
+export default App;
