@@ -69,8 +69,8 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div className="md:hidden flex items-center">
-            <LanguageSwitcher />
+         <div className="md:hidden flex items-center">
+           {/*   <LanguageSwitcher /> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="ml-4 text-gray-300 focus:outline-none"
@@ -103,8 +103,8 @@ const Navbar = () => {
              <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.blog')}
              </button>
-             {/* Moved LanguageSwitcher here for desktop */}
-             <LanguageSwitcher />
+             {/* Moved LanguageSwitcher here for desktop 
+             <LanguageSwitcher />*/}
            </div>
         </div>
 
