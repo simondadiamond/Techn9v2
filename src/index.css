@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #111111;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */ /* <-- Temporarily commented out! */
 }
 
 .hero-pattern {
