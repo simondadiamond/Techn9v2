@@ -74,14 +74,14 @@ const Navbar = () => {
 
           {/* Mobile Right Side Group (Only visible < md) */}
           <div className="md:hidden flex items-center">
-             {/* LanguageSwitcher is already removed based on your previous test */}
+             {/* LanguageSwitcher is already removed based on your previous test
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="ml-4 text-gray-300 focus:outline-none" // Keeping ml-4 for now, adjust if needed
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            </button> */}
           </div>
         </div>
 
