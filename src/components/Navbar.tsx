@@ -42,7 +42,7 @@ const Navbar = () => {
         top-0 left-0 right-0 
         mx-auto
         transition-all duration-300
-        ${scrolled ? 'shadow-md' : ''}
+        ${scrolled ? 'bg-black shadow-md' : 'bg-transparent'}
       `}
       style={{ maxWidth: '100%', overflow: 'hidden' }}
     >
@@ -50,16 +50,13 @@ const Navbar = () => {
         className={`
           flex flex-col md:flex-row justify-between items-center
           px-4 py-2
-          bg-stone-950
-          border border-gray-700/50
-          rounded-md
-          max-w-7xl
+          max-w-full
           mx-auto
         `}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
           <div 
-            className="text-white text-xl font-semibold tracking-wider flex-shrink-0"
+            className="text-white text-xl font-semibold tracking-wider flex-shrink-0 mx-auto md:mx-0"
             style={{ width: '120px', height: '32px' }}
           >
             <img 
@@ -99,6 +96,9 @@ const Navbar = () => {
           <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white">
             {t('nav.faqs')}
           </button>
+          <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white">
+            {t('nav.blog')}
+          </button>
         </div>
         
         <div className="hidden md:flex items-center ml-0 md:ml-6 mt-2 md:mt-0">
@@ -122,6 +122,9 @@ const Navbar = () => {
               </button>
               <button onClick={() => handleNavigation('faqs')} className="text-center text-gray-300 hover:text-white">
                 {t('nav.faqs')}
+              </button>
+              <button onClick={() => navigate('/blog')} className="text-center text-gray-300 hover:text-white">
+                {t('nav.blog')}
               </button>
             </div>
           </div>

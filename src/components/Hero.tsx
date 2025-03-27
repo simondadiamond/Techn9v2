@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useI18n } from '../i18n';
 import { createConsultationURL } from '../lib/utils';
 
+function getScreenSize() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  if (width >= 1280 && height >= 800) {
+    return 'xl';
+  } else if (width >= 1024 && height >= 700) {
+    return 'lg';
+  } else if (width >= 768 && height >= 600) {
+    return 'md';
+  } else if (width >= 640 && height >= 500) {
+    return 'sm';
+  } else {
+    return 'xs';
+  }
+}
+
 const Hero = () => {
   const { t, language } = useI18n();
+  const [screenSize, setScreenSize] = useState(getScreenSize());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(getScreenSize());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleBookCall = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -19,11 +46,13 @@ const Hero = () => {
 
   return (
     <div 
-      className="relative h-screen lg:h-[75vh] w-full flex flex-col items-center justify-center text-center bg-cover bg-center transition-all duration-500"
-      style={{ backgroundImage: "url('https://github.com/simondadiamond/techn9-media/blob/64637c5fb7251d5836c9bec3d8deb3b5c72f4fa7/skyscrapers.webp?raw=true')" }}
+      className={`relative w-full flex flex-col items-center justify-center text-center bg-cover bg-center transition-all duration-500 ${screenSize === 'xl' ? 'h-[60vh]' : screenSize === 'lg' ? 'h-[68vh]' : screenSize === 'md' ? 'h-[75vh]' : screenSize === 'sm' ? 'h-[85vh]' : 'h-screen'} pt-20 sm:pt-24`}
+      style={{ 
+        backgroundImage: "url('https://github.com/simondadiamond/techn9-media/blob/64637c5fb7251d5836c9bec3d8deb3b5c72f4fa7/skyscrapers.webp?raw=true')"
+      }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/75" />
+      <div className="absolute inset-0 bg-black/70" />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
