@@ -39,25 +39,27 @@ const Navbar = () => {
     <nav
       className={`
         fixed z-50
-        top-0 left-0 right-0 w-full // Use w-full, removed mx-auto
+        top-0 left-0 right-0 w-full
         transition-all duration-300
         ${scrolled ? 'bg-black shadow-md' : 'bg-transparent'}
       `}
-      // Removed the inline style with overflow: hidden and maxWidth
     >
       <div
         className={`
-          flex flex-wrap justify-between items-center // Added flex-wrap as a safeguard
+          flex flex-wrap items-center // REMOVED justify-between here
           px-4 py-2
-          max-w-7xl // Optional: Constrain content width on very wide screens
-          mx-auto  // Centers the content if max-w is applied
+          max-w-7xl
+          mx-auto
         `}
       >
         {/* Logo and Mobile Toggle Container */}
-        <div className="flex justify-between items-center w-full md:w-auto flex-shrink-0 mr-4"> {/* Added mr-4 for spacing, ensure logo doesn't prevent shrinking unnecessarily if space is tight */}
+        {/* MODIFICATION 1: Removed 'justify-between' from this div */}
+        <div className="flex items-center w-full md:w-auto">
+
+          {/* Logo Div */}
+          {/* MODIFICATION 2: Added 'mr-auto' to this div */}
           <div
-            className="text-white text-xl font-semibold tracking-wider"
-            // Removed fixed width/height style - let content size it or use Tailwind classes
+            className="flex-shrink-0 mr-auto" // Added mr-auto here
           >
             <img
               src={logoUrl}
@@ -65,16 +67,18 @@ const Navbar = () => {
               className="h-8 w-auto" // Use Tailwind height, let width be auto
               style={{
                 mixBlendMode: 'screen',
-                // maxWidth: '120px' // Can keep if needed, but h-8 might be enough
+                // maxWidth: '120px' // Optional: Adjust if needed
               }}
             />
           </div>
-         <div className="md:hidden flex items-center">
-           {/*   <LanguageSwitcher /> */}
+
+          {/* Mobile Right Side Group (Only visible < md) */}
+          <div className="md:hidden flex items-center">
+             {/* LanguageSwitcher is already removed based on your previous test */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="ml-4 text-gray-300 focus:outline-none"
-              aria-label="Toggle menu" // Added aria-label for accessibility
+              className="ml-4 text-gray-300 focus:outline-none" // Keeping ml-4 for now, adjust if needed
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -100,9 +104,12 @@ const Navbar = () => {
              <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.faqs')}
              </button>
-             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
-               {t('nav.blog')}
-             </button>
+             <button 
+							  onClick={() => window.location.href = 'https://techn9.com/blog'} 
+							  className="text-gray-300 hover:text-white whitespace-nowrap"
+							>
+							  {t('nav.blog')}
+							</button>
              {/* Moved LanguageSwitcher here for desktop 
              <LanguageSwitcher />*/}
            </div>
