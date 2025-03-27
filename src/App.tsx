@@ -1,9 +1,11 @@
+// app.tsx - TEMPORARY TEST - NAVBAR + HERO + SERVICES
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'; // Keep Navbar import
 import Hero from './components/Hero'; // Keep Hero import
+import Services from './components/Services'; // *** UNCOMMENT Services import ***
 // Comment out imports for components not being rendered in this test:
-// import Services from './components/Services';
 // import Process from './components/Process';
 // import Benefits from './components/Benefits';
 // import Work from './components/Work';
@@ -17,55 +19,39 @@ import { I18nProvider } from './i18n';
 
 // Comment out MainContent function definition for this test
 /*
-function MainContent() {
-  return (
-    <>
-      <Hero />
-      <Services />
-      <Process />
-      <Benefits />
-      <Work />
-      <About />
-      <CallToAction />
-    </>
-  );
-}
+function MainContent() { ... }
 */
 
 function App() {
   return (
     <I18nProvider>
       <Router>
-        {/* Ensure no overflow-x-hidden here */}
         <div className="bg-black min-h-screen">
-          {/* Render the Navbar (using original Navbar.tsx code) */}
-          <Navbar />
+          <Navbar /> {/* Original Navbar */}
 
-          {/* --- Routes Section: Modified for Test 2 --- */}
           <Routes>
-            {/* Route for '/': Render ONLY Hero */}
+            {/* Route for '/': Render Hero AND Services */}
             <Route path="/" element={
               <>
                 <Hero />
-                {/* --- Components previously on main route are commented out --- */}
-                {/* <MainContent /> */}
+                <Services /> {/* *** ADD Services component here *** */}
+                {/* --- Other components still commented out --- */}
+                {/* <Process /> */}
+                {/* <Benefits /> */}
+                {/* <Work /> */}
+                {/* <About /> */}
                 {/* <CallToAction /> */}
                 {/* <FAQ /> */}
               </>
             } />
 
-            {/* Keep other routes if you need to navigate to them for any reason during test */}
+            {/* Keep other routes */}
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
 
-            {/* Comment out other potential routes like /blog if they exist */}
-            {/* <Route path="/blog" element={<Blog />} /> */}
-
           </Routes>
-          {/* --- End of Routes Section --- */}
 
-
-          {/* --- Footer is commented out for this test --- */}
+          {/* --- Footer still commented out --- */}
           {/* <Footer /> */}
 
         </div>
