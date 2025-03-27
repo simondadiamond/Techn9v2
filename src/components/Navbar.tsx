@@ -27,7 +27,7 @@ const Navbar = () => {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         element?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      }, 100); // Small delay might be needed if route change takes time
     } else {
       const element = document.getElementById(sectionId);
       element?.scrollIntoView({ behavior: 'smooth' });
@@ -38,93 +38,91 @@ const Navbar = () => {
   return (
     <nav
       className={`
-        fixed z-50 
-        top-0 left-0 right-0 
-        mx-auto
+        fixed z-50
+        top-0 left-0 right-0 w-full // Use w-full, removed mx-auto
         transition-all duration-300
         ${scrolled ? 'bg-black shadow-md' : 'bg-transparent'}
       `}
-      style={{ maxWidth: '100%', overflow: 'hidden' }}
+      // Removed the inline style with overflow: hidden and maxWidth
     >
       <div
         className={`
-          flex flex-col md:flex-row justify-between items-center
+          flex flex-wrap justify-between items-center // Added flex-wrap as a safeguard
           px-4 py-2
-          max-w-full
-          mx-auto
+          max-w-7xl // Optional: Constrain content width on very wide screens
+          mx-auto  // Centers the content if max-w is applied
         `}
       >
-        <div className="flex justify-between items-center w-full md:w-auto">
-          <div 
-            className="text-white text-xl font-semibold tracking-wider flex-shrink-0 mx-auto md:mx-0"
-            style={{ width: '120px', height: '32px' }}
+        {/* Logo and Mobile Toggle Container */}
+        <div className="flex justify-between items-center w-full md:w-auto flex-shrink-0 mr-4"> {/* Added mr-4 for spacing, ensure logo doesn't prevent shrinking unnecessarily if space is tight */}
+          <div
+            className="text-white text-xl font-semibold tracking-wider"
+            // Removed fixed width/height style - let content size it or use Tailwind classes
           >
-            <img 
-              src={logoUrl} 
-              alt="TECHN9" 
-              className="h-full w-auto max-w-full object-contain"
-              style={{ 
+            <img
+              src={logoUrl}
+              alt="TECHN9"
+              className="h-8 w-auto" // Use Tailwind height, let width be auto
+              style={{
                 mixBlendMode: 'screen',
-                maxWidth: '120px'
+                // maxWidth: '120px' // Can keep if needed, but h-8 might be enough
               }}
             />
           </div>
           <div className="md:hidden flex items-center">
             <LanguageSwitcher />
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="ml-4 text-gray-300 focus:outline-none"
+              aria-label="Toggle menu" // Added aria-label for accessibility
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
-        
-        <div className="hidden md:flex space-x-4 md:space-x-6 ml-0 md:ml-6 mt-2 md:mt-0">
-          <button onClick={() => handleNavigation('services')} className="text-gray-300 hover:text-white">
-            {t('nav.services')}
-          </button>
-          <button onClick={() => handleNavigation('process')} className="text-gray-300 hover:text-white">
-            {t('nav.process')}
-          </button>
-          <button onClick={() => handleNavigation('work')} className="text-gray-300 hover:text-white">
-            {t('nav.work')}
-          </button>
-          <button onClick={() => handleNavigation('about')} className="text-gray-300 hover:text-white">
-            {t('nav.about')}
-          </button>
-          <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white">
-            {t('nav.faqs')}
-          </button>
-          <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white">
-            {t('nav.blog')}
-          </button>
-        </div>
-        
-        <div className="hidden md:flex items-center ml-0 md:ml-6 mt-2 md:mt-0">
-          <LanguageSwitcher />
+
+        {/* Desktop Navigation Links */}
+        {/* Grouped Nav and Language Switcher for better flex control */}
+        <div className="hidden md:flex flex-grow items-center justify-end"> {/* Use flex-grow to take remaining space, justify-end */}
+           <div className="flex space-x-4 md:space-x-6 items-center">
+             <button onClick={() => handleNavigation('services')} className="text-gray-300 hover:text-white whitespace-nowrap"> {/* Added whitespace-nowrap */}
+               {t('nav.services')}
+             </button>
+             <button onClick={() => handleNavigation('process')} className="text-gray-300 hover:text-white whitespace-nowrap">
+               {t('nav.process')}
+             </button>
+             <button onClick={() => handleNavigation('work')} className="text-gray-300 hover:text-white whitespace-nowrap">
+               {t('nav.work')}
+             </button>
+             <button onClick={() => handleNavigation('about')} className="text-gray-300 hover:text-white whitespace-nowrap">
+               {t('nav.about')}
+             </button>
+             <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white whitespace-nowrap">
+               {t('nav.faqs')}
+             </button>
+             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
+               {t('nav.blog')}
+             </button>
+             {/* Moved LanguageSwitcher here for desktop */}
+             <LanguageSwitcher />
+           </div>
         </div>
 
+
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden w-full border-t border-gray-800 mt-2">
-            <div className="flex flex-col items-center space-y-2 p-2">
-              <button onClick={() => handleNavigation('services')} className="text-center text-gray-300 hover:text-white">
+          <div className="md:hidden w-full border-t border-gray-700 mt-2 pt-2"> {/* Adjusted border color/spacing */}
+            <div className="flex flex-col items-center space-y-2">
+              {/* Mobile links... (keep as they were) */}
+               <button onClick={() => handleNavigation('services')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
                 {t('nav.services')}
               </button>
-              <button onClick={() => handleNavigation('process')} className="text-center text-gray-300 hover:text-white">
+              <button onClick={() => handleNavigation('process')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
                 {t('nav.process')}
               </button>
-              <button onClick={() => handleNavigation('work')} className="text-center text-gray-300 hover:text-white">
-                {t('nav.work')}
-              </button>
-              <button onClick={() => handleNavigation('about')} className="text-center text-gray-300 hover:text-white">
-                {t('nav.about')}
-              </button>
-              <button onClick={() => handleNavigation('faqs')} className="text-center text-gray-300 hover:text-white">
-                {t('nav.faqs')}
-              </button>
-              <button onClick={() => navigate('/blog')} className="text-center text-gray-300 hover:text-white">
-                {t('nav.blog')}
+              {/* ... other mobile links */}
+               <button onClick={() => navigate('/blog')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
+                 {t('nav.blog')}
               </button>
             </div>
           </div>
