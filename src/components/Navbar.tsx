@@ -100,9 +100,6 @@ const Navbar = () => {
              <button onClick={() => handleNavigation('faqs')} className="text-gray-300 hover:text-white whitespace-nowrap">
                {t('nav.faqs')}
              </button>
-             <button onClick={() => navigate('/blog')} className="text-gray-300 hover:text-white whitespace-nowrap">
-               {t('nav.blog')}
-             </button>
              {/* Moved LanguageSwitcher here for desktop */}
              <LanguageSwitcher />
            </div>
@@ -121,9 +118,6 @@ const Navbar = () => {
                 {t('nav.process')}
               </button>
               {/* ... other mobile links */}
-               <button onClick={() => navigate('/blog')} className="block w-full text-center py-1 text-gray-300 hover:text-white">
-                 {t('nav.blog')}
-              </button>
             </div>
           </div>
         )}
