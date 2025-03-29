@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/blog/*"
+  to = "https://blog.techn9.com/blog/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.techn9.com/*"
+  to = "https://techn9.com/:splat"
+  status = 301
+  force = true
