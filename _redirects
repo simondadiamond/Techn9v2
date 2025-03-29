@@ -1,2 +1,2 @@
-/blog/*  https://blog.techn9.com/blog/:splat 200
+/blog/*  https://blog.techn9.com/blog/:splat  200
 https://www.techn9.com/*  https://techn9.com/:splat 301!
